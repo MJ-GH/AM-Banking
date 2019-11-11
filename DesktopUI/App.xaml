@@ -1,0 +1,167 @@
+﻿<Application x:Class="DesktopUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DesktopUI">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <local:Bootstrapper x:Key="Bootstrapper" />
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+
+
+            <!-- Global fontfamily -->
+            <Style TargetType="Control" x:Key="BaseFontFamily">
+                <Setter Property="FontFamily" Value="Constantia"/>
+            </Style>
+
+            <!-- Style til labels i buttons på Dashboard -->
+            <Style TargetType="Label" x:Key="DashboardBtnLabelsStyle" BasedOn="{StaticResource BaseFontFamily}">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+            </Style>
+
+            <!-- Style til Dashboard knapper -->
+            <Style TargetType="Button" x:Key="DashboardBtnsStyle" BasedOn="{StaticResource BaseFontFamily}">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="Transparent"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- Style til Page_LoginScreen knapper -->
+            <Style TargetType="Button" x:Key="LoginBtnsStyle" BasedOn="{StaticResource BaseFontFamily}">
+                <Setter Property="Width" Value="100"/>
+                <Setter Property="Height" Value="25"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Background" Value="#192a56"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="BorderBrush" Value="{x:Null}"/>
+            </Style>
+
+            <!-- Style til BlivBruger knap på Page_SignUpScreen -->
+            <Style TargetType="Button" x:Key="SignUpBtnStyle" BasedOn="{StaticResource LoginBtnsStyle}">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+
+            <!-- Style til Afbryd knap på Page_SignUpScreen -->
+            <Style TargetType="Button" x:Key="CancelBtnStyle" BasedOn="{StaticResource SignUpBtnStyle}">
+                <Setter Property="Background" Value="DarkRed"/>
+            </Style>
+
+            <!-- Style til Messagebox X-knapper -->
+            <Style TargetType="Button" x:Key="CloseBtnStyle" BasedOn="{StaticResource BaseFontFamily}">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Height" Value="15"/>
+                <Setter Property="Width" Value="16"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="IsDefault" Value="True"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Margin" Value="0 11 12 0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <!-- Udkommenter dette hvis det fucker igen -->
+                                <!--<ContentPresenter HorizontalAlignment="Right" VerticalAlignment="Top"/>-->
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="Transparent"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+
+
+            <!-- DataGrid Styles -->
+
+            <!-- Style til DataGrid -->
+            <Style TargetType="DataGrid" x:Key="AlternatingRowBackGroundStyle">
+                <Setter Property="AutoGenerateColumns" Value="False"/>
+                <Setter Property="AlternatingRowBackground" Value="Gray"/>
+                <Setter Property="IsReadOnly" Value="True"/>
+                <Setter Property="HeadersVisibility" Value="Column"/>
+                <Setter Property="CanUserSortColumns" Value="False"/>
+                <Setter Property="CanUserResizeColumns" Value="False"/>
+                <Setter Property="CanUserReorderColumns" Value="False"/>
+                <Setter Property="SelectionUnit" Value="FullRow"/>
+                <Setter Property="SelectionMode" Value="Single"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="0 20 0 0"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- Style til DataGrid uden AlternatingBackgroundStyle -->
+            <Style TargetType="DataGrid" x:Key="NoAlternatingBackgroundStyle" BasedOn="{StaticResource AlternatingRowBackGroundStyle}">
+                <Setter Property="AlternatingRowBackground" Value="White"/>
+            </Style>
+
+            <!-- Style til DataGridColumnHeaders -->
+            <Style TargetType="DataGridColumnHeader" x:Key="DataGridHeaderStyle" BasedOn="{StaticResource BaseFontFamily}">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Margin" Value="0 0 20 0"/>
+            </Style>
+
+            <!-- Style til DataGridColumnHeadersRight-->
+            <Style TargetType="DataGridColumnHeader" x:Key="DataGridHeaderStyleRight" BasedOn="{StaticResource DataGridHeaderStyle}">
+                <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                <Setter Property="Margin" Value="20 0 0 0"/>
+            </Style>
+
+            <!-- Der ligger en ekstra header under den som jeg ændrede på tidligere. Denne style gør den usynlig. -->
+            <Style TargetType="{x:Type DataGridColumnHeader}">
+                <Setter Property="Background" Value="Transparent"/>
+            </Style>
+
+            <!-- Style som fjerner den blå baggrundsfarve og sorte border når man trykker på en celle. -->
+            <Style TargetType="DataGridCell" x:Key="DataGridCellStyle">
+                <Setter Property="Foreground" Value="Black"/>
+                <Style.Triggers>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Background" Value="{x:Null}"/>
+                        <Setter Property="BorderBrush" Value="{x:Null}"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- Style baseret på den over men højrealigned -->
+            <Style TargetType="DataGridCell" x:Key="DataGridCellStyleRight" BasedOn="{StaticResource DataGridCellStyle}">
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+            </Style>
+
+
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

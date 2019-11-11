@@ -1,0 +1,29 @@
+﻿<Window x:Class="DesktopUI.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopUI.Views"
+        mc:Ignorable="d"
+        Title="AM Banking" Height="600" Width="500" Background="#f7f1e3"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Icon="C:\Users\maje\source\repos\AM-Banking\DesktopUI\Images\logo.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="4" Grid.Column="0" 
+               FontSize="12" FontFamily="Constantia"
+               Content="AM Banking ©"/>
+
+        <ContentControl x:Name="ActiveItem"
+                        Grid.Row="0" Grid.Column="0" />
+
+
+    </Grid>
+</Window>

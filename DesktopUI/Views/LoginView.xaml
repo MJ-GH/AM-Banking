@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="DesktopUI.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DesktopUI.Views"
+             mc:Ignorable="d" d:DesignWidth="437" d:DesignHeight="590"
+             Background="#f7f1e3">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!-- Row 1 -->
+        <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"
+               HorizontalAlignment="Center" VerticalAlignment="Center" 
+               FontSize="40" FontFamily="Constantia" FontWeight="Bold" 
+               Background="Transparent" Foreground="#192a56" 
+               Content="Log Ind" />
+
+        <!-- Row 2 -->
+        <TextBox x:Name="emailBox" 
+                 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                 VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Bottom"
+                 Width="150" Height="35" Margin="0 0 25 0" Padding="0" 
+                 BorderThickness="0 0 0 2" BorderBrush="#192a56" 
+                 FontSize="15" FontFamily="Constantia" Background="Transparent" />
+
+        <PasswordBox x:Name="kodeordBox" 
+                     Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" 
+                     VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Bottom"
+                     Width="150" Height="35" Margin="25 0 0 0" 
+                     BorderThickness="0 0 0 2" BorderBrush="#192a56" 
+                     FontSize="15" FontFamily="Constantia" Background="Transparent" />
+
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+               HorizontalAlignment="Center" VerticalAlignment="Center" 
+               FontSize="20" FontFamily="Constantia" Foreground="#192a56"
+               Margin="0 60 25 0" Content="Email" />
+        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" 
+               HorizontalAlignment="Center" VerticalAlignment="Center" 
+               FontSize="20" FontFamily="Constantia" Foreground="#192a56"
+               Margin="25 60 0 0" Content="Kodeord" />
+
+        <!-- Row 3 -->
+        <Button x:Name="Btn_LogInd"
+                Content="Log Ind"
+                Grid.Row="2" Grid.Column="1"
+                IsDefault="True"
+                Style="{StaticResource LoginBtnsStyle}"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
+               HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+               FontSize="14" FontFamily="Constantia"
+               Content="Er du ikke bruger endnu?" />
+
+        <!-- Row 4 -->
+        <Button x:Name="ShowSignUp"
+                Content="Opret Nu!"
+                Grid.Row="3" Grid.Column="1"
+                Style="{StaticResource LoginBtnsStyle}" />
+
+
+
+    </Grid>
+</UserControl>
