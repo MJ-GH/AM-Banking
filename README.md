@@ -1,2 +1,2 @@
-# AM-Banking
-Desktop application for AM Banking
+# AM Banking
+Desktop application for AM Banking.
