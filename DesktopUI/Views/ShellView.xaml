@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AM Banking" Height="600" Width="500" Background="#f7f1e3"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
-        Icon="C:\Users\maje\source\repos\AM-Banking\DesktopUI\Images\logo.ico">
+        Icon="..\Images\logo.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>

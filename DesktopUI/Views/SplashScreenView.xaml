@@ -10,7 +10,7 @@
     <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <Grid.Background>
             <ImageBrush 
-                ImageSource="C:\Users\maje\source\repos\AM-Banking\DesktopUI\Images\am_logo_square_v1.jpg" 
+                ImageSource = "..\Images\am_logo_square_v1.jpg" 
                 x:Name="splashscreenpic"
                 Stretch="None" />
         </Grid.Background>
