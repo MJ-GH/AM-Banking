@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using DesktopUI.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,22 +9,21 @@ using System.Windows.Threading;
 
 namespace DesktopUI.ViewModels
 {
-    public class ShellViewModel : Conductor<object>, IHandle<Helpers.ViewChangeHelper>
+    public class ShellViewModel : Conductor<object>, IHandle<SignUpPageRequestEvent>, IHandle<LogInPageRequestEvent>
     {
-        DispatcherTimer dt = new DispatcherTimer();
-        private readonly SplashScreenViewModel _splashVM;
-        private readonly LoginViewModel _loginVM;
-        private readonly SignUpViewModel _signUpVM;
-        private readonly IEventAggregator _eventAggregator;
+        private DispatcherTimer dt = new DispatcherTimer();
+        private SplashScreenViewModel _splashVM;
+        private IEventAggregator _events;
+        private SimpleContainer _container;
 
-        public ShellViewModel(SplashScreenViewModel splashVM, LoginViewModel loginVM, SignUpViewModel signUpVM, IEventAggregator eventAggregator)
+        public ShellViewModel(SplashScreenViewModel splashVM, IEventAggregator events, SimpleContainer container)
         {
-            _eventAggregator = eventAggregator;
-            _eventAggregator.Subscribe(this);
-
-            _loginVM = loginVM;
-            _signUpVM = signUpVM;
+            _events = events;
             _splashVM = splashVM;
+            _container = container;
+
+            _events.Subscribe(this);
+            
             ActivateItem(_splashVM);
 
             dt.Tick += new EventHandler(Dt_Tick);
@@ -34,17 +34,23 @@ namespace DesktopUI.ViewModels
         private void Dt_Tick(object sender, EventArgs e)
         {
             dt.Stop();
-            ActivateItem(_loginVM);
+
+            // Laver en ny instans af LoginViewModel
+            ActivateItem(_container.GetInstance<LoginViewModel>());
         }
 
-        public void Handle(Helpers.ViewChangeHelper message)
+        public void Handle(SignUpPageRequestEvent message)
         {
-            ActivateItem(message.Page);
+            // Laver en ny instans af SignUpViewModel hver gang, så brugerens data ikke tilfældigt bliver gemt.
+            ActivateItem(_container.GetInstance<SignUpViewModel>());
         }
 
+        public void Handle(LogInPageRequestEvent message)
+        {
+            // Laver en ny instans af LoginViewModel hver gang, så brugerens data ikke tilfældigt bliver gemt.
+            ActivateItem(_container.GetInstance<LoginViewModel>());
+        }
 
-
-
-
+        
     }
 }

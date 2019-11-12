@@ -9,8 +9,8 @@
 
     <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <Grid.Background>
-            <ImageBrush 
-                ImageSource = "..\Images\am_logo_square_v1.jpg" 
+            <ImageBrush
+                ImageSource="..\Images\am_logo_square_v1.jpg" 
                 x:Name="splashscreenpic"
                 Stretch="None" />
         </Grid.Background>

@@ -12,7 +12,6 @@ namespace DesktopUI
     public class Bootstrapper : BootstrapperBase
     {
         private readonly SimpleContainer _container = new SimpleContainer();
-        //Test push
 
         public Bootstrapper()
         {

@@ -71,7 +71,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Helpers\ViewChangeHelper.cs" />
+    <Compile Include="Events\LogInPageRequestEvent.cs" />
+    <Compile Include="Events\SignUpPageRequestEvent.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\SignUpViewModel.cs" />

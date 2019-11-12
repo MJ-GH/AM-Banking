@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using DesktopUI.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,22 +10,22 @@ namespace DesktopUI.ViewModels
 {
     public class SignUpViewModel : Screen
     {
-        private readonly IEventAggregator _eventAggragator;
+        private IEventAggregator _events;
 
-        public SignUpViewModel(IEventAggregator eventAggregator)
+        public SignUpViewModel() { }
+        public SignUpViewModel(IEventAggregator events)
         {
-            _eventAggragator = eventAggregator;
+            _events = events;
         }
 
         public void ShowLogin()
         {
-            _eventAggragator.PublishOnUIThread(new Helpers.ViewChangeHelper { Page = new LoginViewModel() });
+            _events.PublishOnUIThread(new LogInPageRequestEvent());
         }
 
-        public SignUpViewModel()
-        {
+        //Lav en eventaggregator class
 
-        }
+
 
 
 
