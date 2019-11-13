@@ -71,12 +71,39 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DBcon.cs" />
     <Compile Include="Events\LogInPageRequestEvent.cs" />
     <Compile Include="Events\SignUpPageRequestEvent.cs" />
+    <Compile Include="Helpers\PasswordBoxHelper.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="ViewModels\MessageBoxes\IncompleteFormErrorViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MessageBoxes\LoginErrorViewModel.cs" />
+    <Compile Include="ViewModels\MessageBoxes\PasswordsDoesntMatchErrorViewModel.cs" />
+    <Compile Include="ViewModels\MessageBoxes\PhoneNumberHasLettersErrorViewModel.cs" />
+    <Compile Include="ViewModels\MessageBoxes\PhoneNumberLengthErrorViewModel.cs" />
+    <Compile Include="ViewModels\MessageBoxes\UserCreatedSuccesViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\SignUpViewModel.cs" />
     <Compile Include="ViewModels\SplashScreenViewModel.cs" />
+    <Compile Include="Views\MessageBoxes\IncompleteFormErrorView.cs">
+      <DependentUpon>IncompleteFormErrorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MessageBoxes\LoginErrorView.xaml.cs">
+      <DependentUpon>LoginErrorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MessageBoxes\PasswordsDoesntMatchErrorView.xaml.cs">
+      <DependentUpon>PasswordsDoesntMatchErrorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MessageBoxes\PhoneNumberHasLettersErrorView.xaml.cs">
+      <DependentUpon>PhoneNumberHasLettersErrorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MessageBoxes\PhoneNumberLengthErrorView.xaml.cs">
+      <DependentUpon>PhoneNumberLengthErrorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MessageBoxes\UserCreatedSuccesView.xaml.cs">
+      <DependentUpon>UserCreatedSuccesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -118,10 +145,32 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Page Include="Views\MessageBoxes\IncompleteFormErrorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MessageBoxes\LoginErrorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MessageBoxes\PasswordsDoesntMatchErrorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MessageBoxes\PhoneNumberHasLettersErrorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MessageBoxes\PhoneNumberLengthErrorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MessageBoxes\UserCreatedSuccesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +191,11 @@
   <ItemGroup>
     <Resource Include="Images\am_logo_square_v1.jpg" />
     <Resource Include="Images\logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\checkbox_blue.jpg" />
+    <Resource Include="Images\checkbox_green.jpg" />
+    <Resource Include="Images\checkbox_red.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

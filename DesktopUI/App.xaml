@@ -94,7 +94,6 @@
             </Style>
 
 
-
             <!-- DataGrid Styles -->
 
             <!-- Style til DataGrid -->
@@ -159,7 +158,6 @@
             <Style TargetType="DataGridCell" x:Key="DataGridCellStyleRight" BasedOn="{StaticResource DataGridCellStyle}">
                 <Setter Property="HorizontalAlignment" Value="Right"/>
             </Style>
-
 
 
         </ResourceDictionary>

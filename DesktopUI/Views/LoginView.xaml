@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:DesktopUI.Views"
              mc:Ignorable="d" d:DesignWidth="437" d:DesignHeight="590"
              Background="#f7f1e3">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
