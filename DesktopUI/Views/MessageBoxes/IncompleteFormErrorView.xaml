@@ -6,12 +6,11 @@
         xmlns:local="clr-namespace:DesktopUI.Views.MessageBoxes"
         mc:Ignorable="d"
         Title="Error" Height="135" Width="300" 
-        WindowStartupLocation="CenterScreen" 
-        WindowStyle="None" 
+        WindowStartupLocation="CenterScreen" WindowStyle="None" 
         AllowsTransparency="True">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="..\..\Images\checkbox_blue.jpg" />
+            <ImageBrush ImageSource="..\..\Images\checkbox_blue.jpg"/>
         </Grid.Background>
 
         <Grid.ColumnDefinitions>
@@ -24,11 +23,11 @@
                    Text="Udfyld venligst alle felterne!"
                    TextWrapping="Wrap"
                    FontSize="20" FontFamily="Constantia" 
-                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <Button Grid.Column="2"
                 x:Name="CloseWindow" 
-                Style="{StaticResource CloseBtnStyle}" />
+                Style="{StaticResource CloseBtnStyle}"/>
 
     </Grid>
 </Window>

@@ -6,15 +6,19 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
-                    <local:Bootstrapper x:Key="Bootstrapper" />
+                    <local:Bootstrapper x:Key="Bootstrapper"/>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
 
-
+            
             <!-- Global fontfamily -->
             <Style TargetType="Control" x:Key="BaseFontFamily">
                 <Setter Property="FontFamily" Value="Constantia"/>
             </Style>
+
+            <!-- Primær blå farve -->
+            <SolidColorBrush x:Key="PrimaryFontColor">#192a56</SolidColorBrush>
+            <SolidColorBrush x:Key="PrimaryBackgroundColor">#f7f1e3</SolidColorBrush>
 
             <!-- Style til labels i buttons på Dashboard -->
             <Style TargetType="Label" x:Key="DashboardBtnLabelsStyle" BasedOn="{StaticResource BaseFontFamily}">
@@ -44,23 +48,23 @@
                 </Style.Triggers>
             </Style>
 
-            <!-- Style til Page_LoginScreen knapper -->
+            <!-- Style til LoginView knapper -->
             <Style TargetType="Button" x:Key="LoginBtnsStyle" BasedOn="{StaticResource BaseFontFamily}">
                 <Setter Property="Width" Value="100"/>
                 <Setter Property="Height" Value="25"/>
                 <Setter Property="HorizontalAlignment" Value="Center"/>
                 <Setter Property="VerticalAlignment" Value="Top"/>
-                <Setter Property="Background" Value="#192a56"/>
+                <Setter Property="Background" Value="{StaticResource PrimaryFontColor}"/>
                 <Setter Property="Foreground" Value="White"/>
                 <Setter Property="BorderBrush" Value="{x:Null}"/>
             </Style>
 
-            <!-- Style til BlivBruger knap på Page_SignUpScreen -->
+            <!-- Style til BlivBruger knap på SignUpView -->
             <Style TargetType="Button" x:Key="SignUpBtnStyle" BasedOn="{StaticResource LoginBtnsStyle}">
                 <Setter Property="VerticalAlignment" Value="Center"/>
             </Style>
 
-            <!-- Style til Afbryd knap på Page_SignUpScreen -->
+            <!-- Style til Afbryd knap på SignUpView -->
             <Style TargetType="Button" x:Key="CancelBtnStyle" BasedOn="{StaticResource SignUpBtnStyle}">
                 <Setter Property="Background" Value="DarkRed"/>
             </Style>
@@ -79,10 +83,7 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}">
-                                <!-- Udkommenter dette hvis det fucker igen -->
-                                <!--<ContentPresenter HorizontalAlignment="Right" VerticalAlignment="Top"/>-->
-                            </Border>
+                            <Border Background="{TemplateBinding Background}"/>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
@@ -93,9 +94,39 @@
                 </Style.Triggers>
             </Style>
 
+            <!-- Style til Login/SignUp top label -->
+            <Style TargetType="Label" x:Key="TopLabelStyle" BasedOn="{StaticResource BaseFontFamily}">
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="40"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="{StaticResource PrimaryFontColor}"/>
+            </Style>
+            
+            <!-- Style til textboxes og passwordboxes på LoginView og SignUpView -->
+            <Style TargetType="Control" x:Key="InputBoxStyle" BasedOn="{StaticResource BaseFontFamily}">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Bottom"/>
+                <Setter Property="Width" Value="150"/>
+                <Setter Property="Height" Value="35"/>
+                <Setter Property="BorderThickness" Value="0 0 0 2"/>
+                <Setter Property="BorderBrush" Value="{StaticResource PrimaryFontColor}"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="Background" Value="Transparent"/>
+            </Style>
+            
+            <!-- Style til inputbox's labels -->
+            <Style TargetType="Label" x:Key="InputBoxLabelStyle" BasedOn="{StaticResource BaseFontFamily}">
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Foreground" Value="{StaticResource PrimaryFontColor}"/>
+            </Style>
+            
 
             <!-- DataGrid Styles -->
-
+            
             <!-- Style til DataGrid -->
             <Style TargetType="DataGrid" x:Key="AlternatingRowBackGroundStyle">
                 <Setter Property="AutoGenerateColumns" Value="False"/>
@@ -158,7 +189,6 @@
             <Style TargetType="DataGridCell" x:Key="DataGridCellStyleRight" BasedOn="{StaticResource DataGridCellStyle}">
                 <Setter Property="HorizontalAlignment" Value="Right"/>
             </Style>
-
 
         </ResourceDictionary>
     </Application.Resources>

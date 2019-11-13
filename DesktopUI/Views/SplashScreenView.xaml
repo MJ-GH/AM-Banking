@@ -11,7 +11,7 @@
             <ImageBrush
                 ImageSource="..\Images\am_logo_square_v1.jpg" 
                 x:Name="splashscreenpic"
-                Stretch="None" />
+                Stretch="None"/>
         </Grid.Background>
 
         <Grid.Triggers>
@@ -21,7 +21,7 @@
                         <DoubleAnimation 
                             Storyboard.TargetName="splashscreenpic"
                             Storyboard.TargetProperty="(ImageBrush.Opacity)"
-                            From="0" To="1" Duration="0:0:4" />
+                            From="0" To="1" Duration="0:0:4"/>
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger>

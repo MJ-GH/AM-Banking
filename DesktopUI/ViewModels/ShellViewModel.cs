@@ -50,7 +50,5 @@ namespace DesktopUI.ViewModels
             // Laver en ny instans af LoginViewModel hver gang, så brugerens data ikke tilfældigt bliver gemt.
             ActivateItem(_container.GetInstance<LoginViewModel>());
         }
-
-        
     }
 }

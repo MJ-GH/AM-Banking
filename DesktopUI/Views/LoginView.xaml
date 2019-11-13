@@ -22,34 +22,29 @@
 
         <!-- Row 1 -->
         <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"
-               HorizontalAlignment="Center" VerticalAlignment="Center" 
-               FontSize="40" FontFamily="Constantia" FontWeight="Bold" 
-               Background="Transparent" Foreground="#192a56" 
-               Content="Log Ind" />
+               Content="Log Ind" Style="{StaticResource TopLabelStyle}"/>
 
         <!-- Row 2 -->
         <TextBox x:Name="emailBox" 
                  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
-                 VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Bottom"
-                 Width="150" Height="35" Margin="0 0 25 0" Padding="0" 
-                 BorderThickness="0 0 0 2" BorderBrush="#192a56" 
-                 FontSize="15" FontFamily="Constantia" Background="Transparent" />
+                 Margin="0 0 25 0"
+                 Style="{StaticResource InputBoxStyle}"/>
 
         <PasswordBox x:Name="kodeordBox" 
                      Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" 
-                     VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Bottom"
-                     Width="150" Height="35" Margin="25 0 0 0" 
-                     BorderThickness="0 0 0 2" BorderBrush="#192a56" 
-                     FontSize="15" FontFamily="Constantia" Background="Transparent" />
+                     Margin="25 0 0 0" 
+                     Style="{StaticResource InputBoxStyle}"/>
 
-        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
-               HorizontalAlignment="Center" VerticalAlignment="Center" 
-               FontSize="20" FontFamily="Constantia" Foreground="#192a56"
-               Margin="0 60 25 0" Content="Email" />
-        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" 
-               HorizontalAlignment="Center" VerticalAlignment="Center" 
-               FontSize="20" FontFamily="Constantia" Foreground="#192a56"
-               Margin="25 60 0 0" Content="Kodeord" />
+        <Label Content="Email" 
+               Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+               VerticalAlignment="Center" 
+               Margin="0 60 25 0" 
+               Style="{StaticResource InputBoxLabelStyle}"/>
+        <Label Content="Kodeord" 
+               Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" 
+               VerticalAlignment="Center" 
+               Margin="25 60 0 0" 
+               Style="{StaticResource InputBoxLabelStyle}"/>
 
         <!-- Row 3 -->
         <Button x:Name="Btn_LogInd"
@@ -61,15 +56,13 @@
         <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
                HorizontalAlignment="Center" VerticalAlignment="Bottom" 
                FontSize="14" FontFamily="Constantia"
-               Content="Er du ikke bruger endnu?" />
+               Content="Er du ikke bruger endnu?"/>
 
         <!-- Row 4 -->
         <Button x:Name="ShowSignUp"
                 Content="Opret Nu!"
                 Grid.Row="3" Grid.Column="1"
-                Style="{StaticResource LoginBtnsStyle}" />
-
-
+                Style="{StaticResource LoginBtnsStyle}"/>
 
     </Grid>
 </UserControl>

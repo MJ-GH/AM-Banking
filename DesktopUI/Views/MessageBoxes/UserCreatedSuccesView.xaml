@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:DesktopUI.Views.MessageBoxes"
         mc:Ignorable="d"
         Title="UserCreatedSucces" Height="135" Width="300" 
-        WindowStartupLocation="CenterScreen" 
-        WindowStyle="None" 
+        WindowStartupLocation="CenterScreen" WindowStyle="None" 
         AllowsTransparency="True">
     <Grid>
         <Grid.Background>
