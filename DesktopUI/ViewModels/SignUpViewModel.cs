@@ -2,7 +2,6 @@
 using DesktopUI.Events;
 using DesktopUI.Models;
 using DesktopUI.ViewModels.MessageBoxes;
-using DesktopUI.Views.MessageBoxes;
 using System;
 using System.Collections.Generic;
 using System.Data;

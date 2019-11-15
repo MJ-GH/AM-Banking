@@ -1,0 +1,55 @@
+﻿<Window x:Class="DesktopUI.Views.DashboardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopUI.Views"
+        mc:Ignorable="d"
+        Title="AM Banking" Height="600" Width="800" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Icon="..\Images\logo.ico">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="..\Images\wavey_lines_2.jpg" Stretch="Fill"/>
+        </Grid.Background>
+
+        <Button x:Name="ShowMainmenuPage"
+                Grid.Row="0"  
+                Style="{StaticResource DashboardBtnsStyle}">
+            <Label Content="Hovedmenu" Style="{StaticResource DashboardBtnLabelsStyle}"/>
+        </Button>
+        <Button x:Name="ShowAccountsPage" 
+                Grid.Row="1"
+                Style="{StaticResource DashboardBtnsStyle}">
+            <Label Content="Konti" Style="{StaticResource DashboardBtnLabelsStyle}"/>
+        </Button>
+        <Button x:Name="ShowTransactionsPage" 
+                Grid.Row="2"
+                Style="{StaticResource DashboardBtnsStyle}">
+            <Label Content="Transaktioner" Style="{StaticResource DashboardBtnLabelsStyle}"/>
+        </Button>
+        <Button x:Name="ShowPaymentPage" 
+                Grid.Row="3"
+                Style="{StaticResource DashboardBtnsStyle}">
+            <Label Content="Overførsel" Style="{StaticResource DashboardBtnLabelsStyle}"/>
+        </Button>
+
+        <ContentControl x:Name="ActiveItem"
+               Grid.Column="1" Grid.RowSpan="4" 
+               BorderThickness="2 0 0 0" BorderBrush="Black"/>
+
+
+    </Grid>
+</Window>

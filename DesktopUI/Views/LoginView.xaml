@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DesktopUI.Views"
              mc:Ignorable="d" d:DesignWidth="437" d:DesignHeight="590"
-             Background="#f7f1e3">
-    
+             Background="#f7f1e3" Loaded="UserControl_Loaded">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -20,21 +20,22 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <!-- Row 1 -->
+        <!-- Top Label -->
         <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"
                Content="Log Ind" Style="{StaticResource TopLabelStyle}"/>
 
-        <!-- Row 2 -->
-        <TextBox x:Name="emailBox" 
+        <!-- InputBoxes -->
+        <TextBox x:Name="Email" 
                  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
                  Margin="0 0 25 0"
                  Style="{StaticResource InputBoxStyle}"/>
 
-        <PasswordBox x:Name="kodeordBox" 
+        <PasswordBox x:Name="Psw" 
                      Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" 
                      Margin="25 0 0 0" 
                      Style="{StaticResource InputBoxStyle}"/>
 
+        <!-- Labels -->
         <Label Content="Email" 
                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
                VerticalAlignment="Center" 
@@ -46,19 +47,18 @@
                Margin="25 60 0 0" 
                Style="{StaticResource InputBoxLabelStyle}"/>
 
-        <!-- Row 3 -->
-        <Button x:Name="Btn_LogInd"
-                Content="Log Ind"
-                Grid.Row="2" Grid.Column="1"
-                IsDefault="True"
-                Style="{StaticResource LoginBtnsStyle}"/>
-
         <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
                HorizontalAlignment="Center" VerticalAlignment="Bottom" 
                FontSize="14" FontFamily="Constantia"
                Content="Er du ikke bruger endnu?"/>
 
-        <!-- Row 4 -->
+        <!-- Buttons -->
+        <Button x:Name="Login"
+                Content="Log Ind"
+                Grid.Row="2" Grid.Column="1"
+                IsDefault="True"
+                Style="{StaticResource LoginBtnsStyle}"/>
+
         <Button x:Name="ShowSignUp"
                 Content="Opret Nu!"
                 Grid.Row="3" Grid.Column="1"

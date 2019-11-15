@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesktopUI.Views.DashboardPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,24 +11,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace DesktopUI.Views
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for DashboardView.xaml
     /// </summary>
-    public partial class LoginView : UserControl
+    public partial class DashboardView : Window
     {
-        public LoginView()
+        public DashboardView()
         {
             InitializeComponent();
         }
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            Keyboard.Focus(Email);
-        }
     }
 }

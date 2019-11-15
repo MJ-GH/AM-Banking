@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace DesktopUI.Views
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for TestView.xaml
     /// </summary>
-    public partial class LoginView : UserControl
+    public partial class TestView : UserControl
     {
-        public LoginView()
+        public TestView()
         {
             InitializeComponent();
-        }
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            Keyboard.Focus(Email);
         }
     }
 }

@@ -72,10 +72,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DBcon.cs" />
+    <Compile Include="Events\DashboardRequestEvent.cs" />
     <Compile Include="Events\LogInPageRequestEvent.cs" />
     <Compile Include="Events\SignUpPageRequestEvent.cs" />
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="ViewModels\DashboardPages\HovedmenuViewModel.cs" />
+    <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\MessageBoxes\IncompleteFormErrorViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MessageBoxes\LoginErrorViewModel.cs" />
@@ -86,6 +89,13 @@
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\SignUpViewModel.cs" />
     <Compile Include="ViewModels\SplashScreenViewModel.cs" />
+    <Compile Include="ViewModels\TestViewModel.cs" />
+    <Compile Include="Views\DashboardPages\HovedmenuView.xaml.cs">
+      <DependentUpon>HovedmenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardView.xaml.cs">
+      <DependentUpon>DashboardView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MessageBoxes\IncompleteFormErrorView.cs">
       <DependentUpon>IncompleteFormErrorView.xaml</DependentUpon>
     </Compile>
@@ -116,6 +126,9 @@
     <Compile Include="Views\SplashScreenView.xaml.cs">
       <DependentUpon>SplashScreenView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TestView.xaml.cs">
+      <DependentUpon>TestView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
@@ -145,8 +158,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Resource Include="Images\wavey_lines_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\DashboardPages\HovedmenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MessageBoxes\IncompleteFormErrorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -187,6 +210,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\TestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\am_logo_square_v1.jpg" />
@@ -197,5 +224,6 @@
     <Resource Include="Images\checkbox_green.jpg" />
     <Resource Include="Images\checkbox_red.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
