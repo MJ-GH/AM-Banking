@@ -61,10 +61,6 @@ namespace DesktopUI.ViewModels
 
         public void Handle(DashboardRequestEvent message)
         {
-
-            //ActivateItem(IoC.Get<DashboardRequestEvent>());
-
-
             manager.ShowWindow(new DashboardViewModel(u));
 
             (GetView() as Window).Close();

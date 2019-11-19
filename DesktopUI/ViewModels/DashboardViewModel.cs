@@ -16,7 +16,7 @@ namespace DesktopUI.ViewModels
         {
              u = _u;
 
-            ActivateItem(IoC.Get<HovedmenuViewModel>());
+            ActivateItem(IoC.Get<MainMenuViewModel>());
         }
     }
 }

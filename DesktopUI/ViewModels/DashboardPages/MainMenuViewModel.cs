@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DesktopUI.ViewModels.DashboardPages
 {
-    public class HovedmenuViewModel : Screen
+    public class MainMenuViewModel : Screen
     {
         private string _firstName;
         private string _lastName;
@@ -38,7 +38,7 @@ namespace DesktopUI.ViewModels.DashboardPages
         {
             get { return $"{ FirstName } { LastName }"; }
         }
-        public HovedmenuViewModel()
+        public MainMenuViewModel()
         {
             _firstName = DashboardViewModel.u.FirstName;
             _lastName = DashboardViewModel.u.LastName;

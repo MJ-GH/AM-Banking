@@ -79,7 +79,10 @@
     <Compile Include="Events\SignUpPageRequestEvent.cs" />
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
     <Compile Include="Models\UserModel.cs" />
-    <Compile Include="ViewModels\DashboardPages\HovedmenuViewModel.cs" />
+    <Compile Include="ViewModels\DashboardPages\AccountsViewModel.cs" />
+    <Compile Include="ViewModels\DashboardPages\MainMenuViewModel.cs" />
+    <Compile Include="ViewModels\DashboardPages\PaymentsViewModel.cs" />
+    <Compile Include="ViewModels\DashboardPages\TransactionsViewModel.cs" />
     <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\MessageBoxes\IncompleteFormErrorViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
@@ -91,8 +94,17 @@
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\SignUpViewModel.cs" />
     <Compile Include="ViewModels\SplashScreenViewModel.cs" />
-    <Compile Include="Views\DashboardPages\HovedmenuView.xaml.cs">
-      <DependentUpon>HovedmenuView.xaml</DependentUpon>
+    <Compile Include="Views\DashboardPages\AccountsView.xaml.cs">
+      <DependentUpon>AccountsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardPages\MainMenuView.cs">
+      <DependentUpon>MainMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardPages\PaymentsView.xaml.cs">
+      <DependentUpon>PaymentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardPages\TransactionsView.xaml.cs">
+      <DependentUpon>TransactionsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
@@ -160,7 +172,19 @@
     <Resource Include="Images\wavey_lines_2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\DashboardPages\HovedmenuView.xaml">
+    <Page Include="Views\DashboardPages\AccountsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardPages\MainMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardPages\PaymentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardPages\TransactionsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

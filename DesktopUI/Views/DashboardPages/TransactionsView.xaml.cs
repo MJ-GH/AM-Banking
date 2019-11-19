@@ -1,6 +1,4 @@
-﻿using DesktopUI.Models;
-using DesktopUI.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,17 +16,13 @@ using System.Windows.Shapes;
 namespace DesktopUI.Views.DashboardPages
 {
     /// <summary>
-    /// Interaction logic for HovedmenuView.xaml
+    /// Interaction logic for TransactionsView.xaml
     /// </summary>
-    public partial class HovedmenuView : UserControl
+    public partial class TransactionsView : UserControl
     {
-        public HovedmenuView()
+        public TransactionsView()
         {
             InitializeComponent();
-        }
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
         }
     }
 }
