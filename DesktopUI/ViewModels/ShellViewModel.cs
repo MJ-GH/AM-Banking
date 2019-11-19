@@ -23,17 +23,14 @@ namespace DesktopUI.ViewModels
         IWindowManager manager = new WindowManager();
         public static UserModel u;
 
-        public double Width { get; private set; }
-        public double Height { get; private set; }
-        public double Left { get; private set; }
-        public double Top { get; private set; }
-
-        public ShellViewModel(SplashScreenViewModel splashVM, IEventAggregator events)
+        public ShellViewModel(SplashScreenViewModel splashVM, IEventAggregator events, UserModel _u)
         {
             _events = events;
             _splashVM = splashVM;
             _events.Subscribe(this);
-            
+            u = _u;
+
+
             ActivateItem(_splashVM);
 
             dt.Tick += new EventHandler(Dt_Tick);
@@ -64,34 +61,13 @@ namespace DesktopUI.ViewModels
 
         public void Handle(DashboardRequestEvent message)
         {
-            ActivateItem(IoC.Get<TestViewModel>());
-            Application.Current.MainWindow.Height = 600;
-            Application.Current.MainWindow.Width = 800;
+
+            //ActivateItem(IoC.Get<DashboardRequestEvent>());
 
 
+            manager.ShowWindow(new DashboardViewModel(u));
 
-
-
-
-
-
-
-
-
-
-
-
-
-            //manager.ShowWindow(new DashboardViewModel());
-
-            //(GetView() as Window).Close();
-
+            (GetView() as Window).Close();
         }
-
-       
-
-        
-
-
     }
 }
