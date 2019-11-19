@@ -24,5 +24,15 @@ namespace DesktopUI.Views.DashboardPages.AccountsPages
         {
             InitializeComponent();
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DataGridCell_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

@@ -18,5 +18,25 @@ namespace DesktopUI.ViewModels
 
             ActivateItem(IoC.Get<MainMenuViewModel>());
         }
+
+        public void ShowMainMenuPage()
+        {
+            ActivateItem(IoC.Get<MainMenuViewModel>());
+        }
+
+        public void ShowAccountsPage()
+        {
+            ActivateItem(IoC.Get<AccountsViewModel>());
+        }
+
+        public void ShowTransactionsPage()
+        {
+            ActivateItem(IoC.Get<TransactionsViewModel>());
+        }
+
+        public void ShowPaymentsPage()
+        {
+            ActivateItem(IoC.Get<PaymentsViewModel>());
+        }
     }
 }

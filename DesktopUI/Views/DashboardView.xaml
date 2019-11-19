@@ -25,7 +25,7 @@
             <ImageBrush ImageSource="..\Images\wavey_lines_2.jpg" Stretch="Fill"/>
         </Grid.Background>
 
-        <Button x:Name="ShowMainmenuPage"
+        <Button x:Name="ShowMainMenuPage"
                 Grid.Row="0"  
                 Style="{StaticResource DashboardBtnsStyle}">
             <Label Content="Hovedmenu" Style="{StaticResource DashboardBtnLabelsStyle}"/>
@@ -40,7 +40,7 @@
                 Style="{StaticResource DashboardBtnsStyle}">
             <Label Content="Transaktioner" Style="{StaticResource DashboardBtnLabelsStyle}"/>
         </Button>
-        <Button x:Name="ShowPaymentPage" 
+        <Button x:Name="ShowPaymentsPage" 
                 Grid.Row="3"
                 Style="{StaticResource DashboardBtnsStyle}">
             <Label Content="Overførsel" Style="{StaticResource DashboardBtnLabelsStyle}"/>

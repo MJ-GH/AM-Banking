@@ -30,8 +30,7 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                 Margin="10 0 0 0"
-                Content=">Tilbage"
-                Click="BackBtn_Click"/>
+                Content=">Tilbage"/>
 
         <DataGrid x:Name="DataGridTilEnkeltKontoTransaktioner" 
                   Grid.Row="1"

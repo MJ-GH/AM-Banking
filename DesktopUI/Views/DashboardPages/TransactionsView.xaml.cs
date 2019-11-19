@@ -24,5 +24,10 @@ namespace DesktopUI.Views.DashboardPages
         {
             InitializeComponent();
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
