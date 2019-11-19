@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Caliburn.Micro;
+using DesktopUI.Views.DashboardPages.AccountsPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,11 @@ namespace DesktopUI.Views.DashboardPages
         public AccountsView()
         {
             InitializeComponent();
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            ActiveItem.Content = new AccountsOverviewView();
         }
     }
 }
