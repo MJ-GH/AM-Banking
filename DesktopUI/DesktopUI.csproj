@@ -79,6 +79,8 @@
     <Compile Include="Events\SignUpPageRequestEvent.cs" />
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="ViewModels\DashboardPages\AccountsPages\AccountsOverviewViewModel.cs" />
+    <Compile Include="ViewModels\DashboardPages\AccountsPages\OneAccountsTransactionsViewModel.cs" />
     <Compile Include="ViewModels\DashboardPages\AccountsViewModel.cs" />
     <Compile Include="ViewModels\DashboardPages\MainMenuViewModel.cs" />
     <Compile Include="ViewModels\DashboardPages\PaymentsViewModel.cs" />
@@ -94,6 +96,12 @@
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\SignUpViewModel.cs" />
     <Compile Include="ViewModels\SplashScreenViewModel.cs" />
+    <Compile Include="Views\DashboardPages\AccountsPages\AccountsOverviewView.xaml.cs">
+      <DependentUpon>AccountsOverviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardPages\AccountsPages\OneAccountsTransactionsView.cs">
+      <DependentUpon>OneAccountsTransactions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DashboardPages\AccountsView.xaml.cs">
       <DependentUpon>AccountsView.xaml</DependentUpon>
     </Compile>
@@ -172,6 +180,14 @@
     <Resource Include="Images\wavey_lines_2.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\DashboardPages\AccountsPages\AccountsOverviewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardPages\AccountsPages\OneAccountsTransactions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DashboardPages\AccountsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

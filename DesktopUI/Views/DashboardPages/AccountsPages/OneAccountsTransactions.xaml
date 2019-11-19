@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="DesktopUI.Views.DashboardPages.AccountsPages.OneAccountsTransactionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DesktopUI.Views.DashboardPages.AccountsPages"
+             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <Label x:Name="KontoTypeLabel"
+               FontSize="30"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               Style="{StaticResource BaseFontFamily}"
+               ContentStringFormat=" {0}"/>
+
+        <Button x:Name="BackBtn"
+                Grid.Row="0"
+                Width="70"
+                Height="30"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Margin="10 0 0 0"
+                Content=">Tilbage"
+                Click="BackBtn_Click"/>
+
+        <DataGrid x:Name="DataGridTilEnkeltKontoTransaktioner" 
+                  Grid.Row="1"
+                  Style="{StaticResource AlternatingRowBackGroundStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Dato"
+                                    Binding="{Binding dato, Mode=OneWay}"
+                                    HeaderStyle="{StaticResource DataGridHeaderStyle}"
+                                    CellStyle="{StaticResource DataGridCellStyle}"/>
+                <DataGridTextColumn Header="Konto Nr."
+                                    Binding="{Binding kontoID, Mode=OneWay}"
+                                    HeaderStyle="{StaticResource DataGridHeaderStyle}"
+                                    CellStyle="{StaticResource DataGridCellStyle}"/>
+                <DataGridTextColumn Header="Note"
+                                    Binding="{Binding note, Mode=OneWay}"
+                                    HeaderStyle="{StaticResource DataGridHeaderStyle}"
+                                    CellStyle="{StaticResource DataGridCellStyle}"/>
+                <DataGridTextColumn Header="Beløb"
+                                    HeaderStyle="{StaticResource DataGridHeaderStyleRight}"
+                                    CellStyle="{StaticResource DataGridCellStyleRight}">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat=" {0}{1}">
+                            <Binding Path="funktion" Mode="OneWay"/>
+                            <Binding Path="beloeb" Mode="OneWay"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Ny Saldo"
+                                    Binding="{Binding nySaldo, Mode=OneWay}"
+                                    HeaderStyle="{StaticResource DataGridHeaderStyleRight}"
+                                    CellStyle="{StaticResource DataGridCellStyleRight}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
