@@ -26,6 +26,5 @@ namespace DesktopUI.Views.DashboardPages
         {
             InitializeComponent();
         }
-
     }
 }

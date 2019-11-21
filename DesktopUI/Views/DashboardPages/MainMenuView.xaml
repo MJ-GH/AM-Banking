@@ -2,16 +2,16 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:DesktopUI.Views.DashboardPages"
              mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="750">
-
+    
     <Grid>
         <Label x:Name="FullName" 
                FontSize="42" HorizontalAlignment="Center"
                ContentStringFormat="Velkommen {0}"/>
 
-        <Button x:Name="SignOut"
+        <Button x:Name="LogOut"
                 Content="Log Ud"
                 Width="70" Height="30"
                 VerticalAlignment="Bottom" HorizontalAlignment="Center"
