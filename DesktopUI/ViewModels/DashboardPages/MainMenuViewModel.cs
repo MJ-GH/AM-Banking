@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using DesktopUI.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace DesktopUI.ViewModels.DashboardPages
     {
         private string _firstName;
         private string _lastName;
+        private IEventAggregator _events;
 
         public string FirstName
         {
@@ -22,7 +24,6 @@ namespace DesktopUI.ViewModels.DashboardPages
                 NotifyOfPropertyChange(() => FullName);
             }
         }
-
         public string LastName
         {
             get { return _lastName; }
@@ -33,15 +34,22 @@ namespace DesktopUI.ViewModels.DashboardPages
                 NotifyOfPropertyChange(() => FullName);
             }
         }
-
         public string FullName
         {
             get { return $"{ FirstName } { LastName }"; }
         }
-        public MainMenuViewModel()
+
+        public MainMenuViewModel(IEventAggregator events)
         {
             _firstName = DashboardViewModel.u.FirstName;
             _lastName = DashboardViewModel.u.LastName;
+
+            _events = events;
+        }
+
+        public void LogOut()
+        {
+            _events.PublishOnUIThread(new LogOutEvent());
         }
     }
 }

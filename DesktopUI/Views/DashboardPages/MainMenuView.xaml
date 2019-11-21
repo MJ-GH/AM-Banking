@@ -11,7 +11,7 @@
                FontSize="42" HorizontalAlignment="Center"
                ContentStringFormat="Velkommen {0}"/>
 
-        <Button x:Name="SignOut"
+        <Button x:Name="LogOut"
                 Content="Log Ud"
                 Width="70" Height="30"
                 VerticalAlignment="Bottom" HorizontalAlignment="Center"

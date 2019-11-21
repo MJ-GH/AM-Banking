@@ -76,6 +76,7 @@
     <Compile Include="DBcon.cs" />
     <Compile Include="Events\DashboardRequestEvent.cs" />
     <Compile Include="Events\LogInPageRequestEvent.cs" />
+    <Compile Include="Events\LogOutEvent.cs" />
     <Compile Include="Events\SignUpPageRequestEvent.cs" />
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
     <Compile Include="Models\UserModel.cs" />

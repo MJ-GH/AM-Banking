@@ -18,20 +18,17 @@ namespace DesktopUI.ViewModels
         IHandle<DashboardRequestEvent>
     {
         private DispatcherTimer dt = new DispatcherTimer();
-        private SplashScreenViewModel _splashVM;
         private IEventAggregator _events;
-        IWindowManager manager = new WindowManager();
+        private IWindowManager _manager = new WindowManager();
         public static UserModel u;
 
-        public ShellViewModel(SplashScreenViewModel splashVM, IEventAggregator events, UserModel _u)
+        public ShellViewModel(IEventAggregator events, UserModel _u)
         {
             _events = events;
-            _splashVM = splashVM;
             _events.Subscribe(this);
             u = _u;
 
-
-            ActivateItem(_splashVM);
+            ActivateItem(IoC.Get<SplashScreenViewModel>());
 
             dt.Tick += new EventHandler(Dt_Tick);
             dt.Interval = new TimeSpan(0, 0, 2);
@@ -58,12 +55,13 @@ namespace DesktopUI.ViewModels
             ActivateItem(IoC.Get<LoginViewModel>());
         }
 
-
         public void Handle(DashboardRequestEvent message)
         {
-            manager.ShowWindow(new DashboardViewModel(u));
+            _manager.ShowWindow(new DashboardViewModel(u, _events));
 
-            (GetView() as Window).Close();
+            // Ødelægger MVVM mønstret med denne linje, men jeg nøjes med det for nu, fordi jeg kan ikke få andet til at virke :)
+            Application.Current.MainWindow.Close();
+            //(GetView() as Window).Close();
         }
     }
 }
