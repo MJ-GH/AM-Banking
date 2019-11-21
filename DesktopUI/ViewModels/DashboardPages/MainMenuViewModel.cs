@@ -1,12 +1,9 @@
 ﻿using Caliburn.Micro;
-using DesktopUI.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
 
 namespace DesktopUI.ViewModels.DashboardPages
 {
@@ -25,6 +22,7 @@ namespace DesktopUI.ViewModels.DashboardPages
                 NotifyOfPropertyChange(() => FullName);
             }
         }
+
         public string LastName
         {
             get { return _lastName; }
@@ -35,30 +33,15 @@ namespace DesktopUI.ViewModels.DashboardPages
                 NotifyOfPropertyChange(() => FullName);
             }
         }
+
         public string FullName
         {
             get { return $"{ FirstName } { LastName }"; }
         }
-
-        IWindowManager manager = new WindowManager();
-        private IEventAggregator _events;
-
-        public MainMenuViewModel(IEventAggregator events)
+        public MainMenuViewModel()
         {
             _firstName = DashboardViewModel.u.FirstName;
             _lastName = DashboardViewModel.u.LastName;
-
-            _events = events;
         }
-
-        public void LogOut()
-        {
-            _events.PublishOnUIThread(new LogOutEvent());
-        }
-
-
-
-
-
     }
 }
