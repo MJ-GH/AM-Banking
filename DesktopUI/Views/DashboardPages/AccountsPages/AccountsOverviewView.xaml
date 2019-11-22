@@ -4,8 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DesktopUI.Views.DashboardPages.AccountsPages"
-             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800"
-             Loaded="Page_Loaded">
+             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -24,14 +23,14 @@
                Style="{StaticResource BaseFontFamily}"/>
 
 
-        <DataGrid x:Name="DataGridTilKonti" 
+        <DataGrid x:Name="Accounts"
                   Grid.Row="1"
                   Style="{StaticResource NoAlternatingBackgroundStyle}"
                   SelectedItem="{Binding kontoID, Mode=OneWay}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Konto Nr."
-                                    HeaderStyle="{StaticResource DataGridHeaderStyle}"
-                                    Binding="{Binding kontoID, Mode=OneWay}">
+                                    Binding="{Binding AccountNmb, Mode=OneWay}"
+                                    HeaderStyle="{StaticResource DataGridHeaderStyle}">
                     <DataGridTextColumn.CellStyle>
                         <Style TargetType="DataGridCell" BasedOn="{StaticResource {x:Type DataGridCell}}">
                             <Setter Property="Foreground" Value="Blue"/>
@@ -46,11 +45,11 @@
                     </DataGridTextColumn.CellStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="Navn"
-                                    Binding="{Binding kontoType, Mode=OneWay}"
+                                    Binding="{Binding Name, Mode=OneWay}"
                                     HeaderStyle="{StaticResource DataGridHeaderStyle}"
                                     CellStyle="{StaticResource DataGridCellStyle}"/>
                 <DataGridTextColumn Header="Saldo"
-                                    Binding="{Binding saldo, Mode=OneWay, StringFormat=' {0} DKK'}"
+                                    Binding="{Binding Balance, Mode=OneWay, StringFormat=' {0} DKK'}"
                                     HeaderStyle="{StaticResource DataGridHeaderStyleRight}"
                                     CellStyle="{StaticResource DataGridCellStyleRight}"/>
             </DataGrid.Columns>

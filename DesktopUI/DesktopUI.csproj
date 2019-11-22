@@ -79,6 +79,7 @@
     <Compile Include="Events\LogOutEvent.cs" />
     <Compile Include="Events\SignUpPageRequestEvent.cs" />
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
+    <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="ViewModels\DashboardPages\AccountsPages\AccountsOverviewViewModel.cs" />
     <Compile Include="ViewModels\DashboardPages\AccountsPages\OneAccountsTransactionsViewModel.cs" />

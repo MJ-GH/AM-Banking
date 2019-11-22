@@ -26,7 +26,7 @@
         </Grid.Background>
 
         <Button x:Name="ShowMainMenuPage"
-                Grid.Row="0"  
+                Grid.Row="0"
                 Style="{StaticResource DashboardBtnsStyle}">
             <Label Content="Hovedmenu" Style="{StaticResource DashboardBtnLabelsStyle}"/>
         </Button>
