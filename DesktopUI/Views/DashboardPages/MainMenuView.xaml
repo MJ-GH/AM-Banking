@@ -16,6 +16,5 @@
                 Width="70" Height="30"
                 VerticalAlignment="Bottom" HorizontalAlignment="Center"
                 Background="DarkRed" Margin="0 0 0 10"/>
-
     </Grid>
 </UserControl>

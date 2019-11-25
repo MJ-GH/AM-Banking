@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DesktopUI.Views.DashboardPages.AccountsPages
+namespace DesktopUI.Views.DashboardPages
 {
     /// <summary>
-    /// Interaction logic for OneAccountsTransactionsView.xaml
+    /// Interaction logic for AccountsOverviewView.xaml
     /// </summary>
-    public partial class OneAccountsTransactionsView : UserControl
+    public partial class AccountsView : UserControl
     {
-        public OneAccountsTransactionsView()
+        public AccountsView()
         {
             InitializeComponent();
         }

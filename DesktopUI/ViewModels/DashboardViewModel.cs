@@ -24,7 +24,7 @@ namespace DesktopUI.ViewModels
             _events = events;
             _events.Subscribe(this);
 
-            ActivateItem(IoC.Get<MainMenuViewModel>());
+            ShowMainMenuPage();
         }
 
         public void ShowMainMenuPage()
@@ -52,8 +52,12 @@ namespace DesktopUI.ViewModels
             u = null;
             _manager.ShowWindow(new ShellViewModel(_events, u));
 
+            //DashboardViewModel dash = this;
+            //dash.TryClose();
+            TryClose();
+
             //Application.Current.MainWindow.Close();
-            (GetView() as Window).Close();
+            //(GetView() as Window).Close();
         }
     }
 }

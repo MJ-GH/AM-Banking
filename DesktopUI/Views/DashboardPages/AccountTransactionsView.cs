@@ -1,6 +1,4 @@
-﻿using Caliburn.Micro;
-using DesktopUI.Views.DashboardPages.AccountsPages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +16,11 @@ using System.Windows.Shapes;
 namespace DesktopUI.Views.DashboardPages
 {
     /// <summary>
-    /// Interaction logic for AccountsView.xaml
+    /// Interaction logic for OneAccountsTransactionsView.xaml
     /// </summary>
-    public partial class AccountsView : UserControl
+    public partial class AccountTransactionsView : UserControl
     {
-        public AccountsView()
+        public AccountTransactionsView()
         {
             InitializeComponent();
         }

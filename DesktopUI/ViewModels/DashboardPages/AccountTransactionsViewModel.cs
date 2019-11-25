@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopUI.ViewModels.DashboardPages.AccountsPages
+namespace DesktopUI.ViewModels.DashboardPages
 {
-    public class OneAccountsTransactionsViewModel
+    public class AccountTransactionsViewModel
     {
     }
 }

@@ -10,7 +10,7 @@
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
 
-            
+
             <!-- Global fontfamily -->
             <Style TargetType="Control" x:Key="BaseFontFamily">
                 <Setter Property="FontFamily" Value="Constantia"/>
@@ -102,7 +102,7 @@
                 <Setter Property="Background" Value="Transparent"/>
                 <Setter Property="Foreground" Value="{StaticResource PrimaryFontColor}"/>
             </Style>
-            
+
             <!-- Style til textboxes og passwordboxes på LoginView og SignUpView -->
             <Style TargetType="Control" x:Key="InputBoxStyle" BasedOn="{StaticResource BaseFontFamily}">
                 <Setter Property="VerticalAlignment" Value="Center"/>
@@ -115,17 +115,28 @@
                 <Setter Property="FontSize" Value="15"/>
                 <Setter Property="Background" Value="Transparent"/>
             </Style>
-            
+
             <!-- Style til inputbox's labels -->
             <Style TargetType="Label" x:Key="InputBoxLabelStyle" BasedOn="{StaticResource BaseFontFamily}">
                 <Setter Property="HorizontalAlignment" Value="Center"/>
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="Foreground" Value="{StaticResource PrimaryFontColor}"/>
             </Style>
-            
+
+            <Style TargetType="ContentControl" x:Key="DashboardCCStyle">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ContentControl">
+                            <Border BorderBrush="Black" BorderThickness="2 0 0 0">
+                                <ContentPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
 
             <!-- DataGrid Styles -->
-            
+
             <!-- Style til DataGrid -->
             <Style TargetType="DataGrid" x:Key="AlternatingRowBackGroundStyle">
                 <Setter Property="AutoGenerateColumns" Value="False"/>

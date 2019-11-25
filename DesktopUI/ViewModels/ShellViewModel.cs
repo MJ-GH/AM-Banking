@@ -59,8 +59,12 @@ namespace DesktopUI.ViewModels
         {
             _manager.ShowWindow(new DashboardViewModel(u, _events));
 
+            //ShellViewModel shell = this;
+            //shell.TryClose();
+            TryClose();
+
             // Ødelægger MVVM mønstret med denne linje, men jeg nøjes med det for nu, fordi jeg kan ikke få andet til at virke :)
-            Application.Current.MainWindow.Close();
+            //Application.Current.MainWindow.Close();
             //(GetView() as Window).Close();
         }
     }

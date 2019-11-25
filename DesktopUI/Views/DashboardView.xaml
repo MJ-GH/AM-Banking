@@ -47,13 +47,7 @@
         </Button>
 
         <ContentControl x:Name="ActiveItem"
-               Grid.Column="1" Grid.RowSpan="4">
-            <ContentControl.Template>
-                <ControlTemplate TargetType="ContentControl">
-                    <Border BorderThickness="2 0 0 0" BorderBrush="Black">
-                    </Border>
-                </ControlTemplate>
-            </ContentControl.Template>
-        </ContentControl>
+                        Grid.Column="1" Grid.RowSpan="4"
+                        Style="{StaticResource DashboardCCStyle}"/>
     </Grid>
 </Window>
