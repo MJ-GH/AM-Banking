@@ -84,6 +84,7 @@
     <Compile Include="Events\SignUpPageRequestEvent.cs" />
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
     <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\TransactionModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="ViewModels\DashboardPages\AccountsViewModel.cs" />
     <Compile Include="ViewModels\DashboardPages\AccountTransactionsViewModel.cs" />

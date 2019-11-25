@@ -23,21 +23,20 @@
                HorizontalAlignment="Center" VerticalAlignment="Center"
                Style="{StaticResource BaseFontFamily}"/>
 
-
-        <DataGrid x:Name="DataGridTilTransaktioner" 
+        <DataGrid x:Name="Transactions" 
                   Grid.Row="1"
                   Style="{StaticResource AlternatingRowBackGroundStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Dato"
-                                    Binding="{Binding dato}"
+                                    Binding="{Binding Date, Mode=OneWay}"
                                     HeaderStyle="{StaticResource DataGridHeaderStyle}"
                                     CellStyle="{StaticResource DataGridCellStyle}"/>
                 <DataGridTextColumn Header="Konto Nr."
-                                    Binding="{Binding kontoID}"
+                                    Binding="{Binding AccountNmb, Mode=OneWay}"
                                     HeaderStyle="{StaticResource DataGridHeaderStyle}"
                                     CellStyle="{StaticResource DataGridCellStyle}"/>
                 <DataGridTextColumn Header="Note"
-                                    Binding="{Binding note}"
+                                    Binding="{Binding Note, Mode=OneWay}"
                                     HeaderStyle="{StaticResource DataGridHeaderStyle}"
                                     CellStyle="{StaticResource DataGridCellStyle}"/>
                 <DataGridTextColumn Header="Beløb"
@@ -45,13 +44,13 @@
                                     CellStyle="{StaticResource DataGridCellStyleRight}">
                     <DataGridTextColumn.Binding>
                         <MultiBinding StringFormat=" {0}{1}">
-                            <Binding Path="funktion"/>
-                            <Binding Path="beloeb"/>
+                            <Binding Path="Function" Mode="OneWay"/>
+                            <Binding Path="Amount" Mode="OneWay"/>
                         </MultiBinding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="Ny Saldo"
-                                    Binding="{Binding nySaldo}"
+                                    Binding="{Binding NewBalance, Mode=OneWay}"
                                     HeaderStyle="{StaticResource DataGridHeaderStyleRight}"
                                     CellStyle="{StaticResource DataGridCellStyleRight}"/>
             </DataGrid.Columns>

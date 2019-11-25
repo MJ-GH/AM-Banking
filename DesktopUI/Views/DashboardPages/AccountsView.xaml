@@ -28,8 +28,7 @@
 
         <DataGrid x:Name="Accounts"
                   Grid.Row="1"
-                  Style="{StaticResource NoAlternatingBackgroundStyle}"
-                  SelectedItem="{Binding kontoID, Mode=OneWay}">
+                  Style="{StaticResource NoAlternatingBackgroundStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Konto Nr."
                                     Binding="{Binding AccountNmb, Mode=OneWay}"
