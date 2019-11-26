@@ -13,6 +13,6 @@ namespace DesktopUI.Models
         public char Function { get; set; }
         public decimal Amount { get; set; }
         public decimal NewBalance { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
     }
 }

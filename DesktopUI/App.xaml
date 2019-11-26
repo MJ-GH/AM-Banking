@@ -123,6 +123,7 @@
                 <Setter Property="Foreground" Value="{StaticResource PrimaryFontColor}"/>
             </Style>
 
+            <!-- Style til ContentControl på DashboardView -->
             <Style TargetType="ContentControl" x:Key="DashboardCCStyle">
                 <Setter Property="Template">
                     <Setter.Value>
@@ -169,14 +170,19 @@
             <Style TargetType="DataGridColumnHeader" x:Key="DataGridHeaderStyle" BasedOn="{StaticResource BaseFontFamily}">
                 <Setter Property="Background" Value="Transparent"/>
                 <Setter Property="Foreground" Value="Black"/>
-                <Setter Property="FontSize" Value="20"/>
-                <Setter Property="Margin" Value="0 0 20 0"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderThickness" Value="1 0 0 1"/>
+                <Setter Property="Padding" Value="5 0 20 0"/>
+                <Setter Property="Margin" Value="0 0 30 5"/>
             </Style>
 
             <!-- Style til DataGridColumnHeadersRight-->
             <Style TargetType="DataGridColumnHeader" x:Key="DataGridHeaderStyleRight" BasedOn="{StaticResource DataGridHeaderStyle}">
                 <Setter Property="HorizontalContentAlignment" Value="Right"/>
-                <Setter Property="Margin" Value="20 0 0 0"/>
+                <Setter Property="BorderThickness" Value="0 0 1 1"/>
+                <Setter Property="Padding" Value="20 0 5 0"/>
+                <Setter Property="Margin" Value="60 0 0 5"/>
             </Style>
 
             <!-- Der ligger en ekstra header under den som jeg ændrede på tidligere. Denne style gør den usynlig. -->
@@ -187,10 +193,12 @@
             <!-- Style som fjerner den blå baggrundsfarve og sorte border når man trykker på en celle. -->
             <Style TargetType="DataGridCell" x:Key="DataGridCellStyle">
                 <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="2"/>
                 <Style.Triggers>
                     <Trigger Property="IsSelected" Value="True">
-                        <Setter Property="Background" Value="{x:Null}"/>
-                        <Setter Property="BorderBrush" Value="{x:Null}"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
                     </Trigger>
                 </Style.Triggers>
             </Style>

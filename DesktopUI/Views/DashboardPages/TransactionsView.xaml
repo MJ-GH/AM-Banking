@@ -43,14 +43,14 @@
                                     HeaderStyle="{StaticResource DataGridHeaderStyleRight}"
                                     CellStyle="{StaticResource DataGridCellStyleRight}">
                     <DataGridTextColumn.Binding>
-                        <MultiBinding StringFormat=" {0}{1}">
+                        <MultiBinding StringFormat="{}{0}{1} DKK">
                             <Binding Path="Function" Mode="OneWay"/>
                             <Binding Path="Amount" Mode="OneWay"/>
                         </MultiBinding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="Ny Saldo"
-                                    Binding="{Binding NewBalance, Mode=OneWay}"
+                                    Binding="{Binding NewBalance, Mode=OneWay, StringFormat='{}{0} DKK'}"
                                     HeaderStyle="{StaticResource DataGridHeaderStyleRight}"
                                     CellStyle="{StaticResource DataGridCellStyleRight}"/>
             </DataGrid.Columns>

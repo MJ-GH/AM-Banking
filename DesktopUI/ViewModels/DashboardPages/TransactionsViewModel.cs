@@ -17,7 +17,7 @@ namespace DesktopUI.ViewModels.DashboardPages
         private char _function;
         private decimal _amount;
         private decimal _newBalance;
-        private DateTime _date;
+        private string _date;
         private BindableCollection<TransactionModel> _transactions = new BindableCollection<TransactionModel>();
 
         public int AccountNmb
@@ -65,7 +65,7 @@ namespace DesktopUI.ViewModels.DashboardPages
                 NotifyOfPropertyChange(() => NewBalance);
             }
         }
-        public DateTime Date
+        public string Date
         {
             get { return _date; }
             set 
@@ -112,7 +112,7 @@ namespace DesktopUI.ViewModels.DashboardPages
                             Function = Convert.ToChar(dr[2]),
                             Amount = Convert.ToDecimal(dr[3]),
                             NewBalance = Convert.ToDecimal(dr[4]),
-                            Date = Convert.ToDateTime(dr[5])
+                            Date = dr[5].ToString()
                         });
                     }
                 }
