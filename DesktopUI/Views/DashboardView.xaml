@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid.Background>
-            <ImageBrush ImageSource="..\Images\wavey_lines_2.jpg" Stretch="Fill"/>
+            <ImageBrush ImageSource="..\Images\cookie_1.jpg" Stretch="Fill"/>
         </Grid.Background>
 
         <Button x:Name="ShowMainMenuPage"
