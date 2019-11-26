@@ -4,18 +4,102 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DesktopUI.Views.DashboardPages"
-             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="750">
+             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="750"
+             Background="PaleGoldenrod">
 
     <Grid>
-        <Label FontSize="80">Overførsel</Label>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+
+        <!-- Top Label -->
+        <Label Content="Overførsel"
+               FontSize="30" Grid.ColumnSpan="2"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               Style="{StaticResource BaseFontFamily}"/>
+
+        <!-- Column 0 -->
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical">
+            <DockPanel LastChildFill="False" Margin="15 15 30 15">
+                <Label Content="Hæves på:"
+                       DockPanel.Dock="Left"
+                       FontSize="15"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Style="{StaticResource BaseFontFamily}"/>
+                <ComboBox x:Name="Sender"
+                         DockPanel.Dock="Right"
+                         Style="{StaticResource PaymentInputBoxStyle}"/>
+            </DockPanel>
+            <DockPanel LastChildFill="False" Margin="15 15 30 15">
+                <Label Content="Beløb:"
+                       DockPanel.Dock="Left"
+                       FontSize="15"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Style="{StaticResource BaseFontFamily}"/>
+                <TextBox x:Name="Amount" 
+                         DockPanel.Dock="Right"
+                         Style="{StaticResource PaymentInputBoxStyle}"/>
+            </DockPanel>
+        </StackPanel>
+
+        <DockPanel Grid.Row="3" Grid.Column="0" LastChildFill="False" Margin="15 15 30 15">
+            <Label Content="Note:"
+                       DockPanel.Dock="Left"
+                       FontSize="15"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Style="{StaticResource BaseFontFamily}"/>
+            <TextBox x:Name="Note" 
+                     DockPanel.Dock="Right"
+                     Style="{StaticResource PaymentInputBoxStyle}"/>
+        </DockPanel>
+
+        <DockPanel Grid.Row="4" Grid.Column="0" LastChildFill="False" Margin="15 15 30 15">
+            <Label Content="Modtager:"
+                       DockPanel.Dock="Left"
+                       FontSize="15"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Style="{StaticResource BaseFontFamily}"/>
+            <TextBox x:Name="Receiver"
+                     DockPanel.Dock="Right"
+                 Style="{StaticResource PaymentInputBoxStyle}"/>
+        </DockPanel>
+        
+        <!-- Column 1-->
+        <DockPanel Grid.Row="2" Grid.Column="1" LastChildFill="False" Margin="15 15 70 15">
+            <Label Content="Saldo:"
+                       DockPanel.Dock="Left"
+                       FontSize="15"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Style="{StaticResource BaseFontFamily}"/>
+            <Label x:Name="Balance"
+                   DockPanel.Dock="Right"
+                   BorderBrush="Black"
+                   BorderThickness="0 0 0 2"
+                   Width="160"
+                   Height="40"
+                   HorizontalContentAlignment="Right"
+                   VerticalContentAlignment="Center"
+                   FontSize="20"/>
+        </DockPanel>
+        
+        <Button x:Name="Pay"
+                Content="Overfør"
+                Grid.Row="4" Grid.Column="1"
+                FontSize="20"
+                HorizontalContentAlignment="Center"
+                Background="{StaticResource PrimaryFontColor}"
+                Foreground="White"
+                Style="{StaticResource PaymentInputBoxStyle}"/>
     </Grid>
 </UserControl>

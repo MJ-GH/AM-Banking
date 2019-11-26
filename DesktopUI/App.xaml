@@ -11,6 +11,7 @@
             </ResourceDictionary.MergedDictionaries>
 
 
+            
             <!-- Global fontfamily -->
             <Style TargetType="Control" x:Key="BaseFontFamily">
                 <Setter Property="FontFamily" Value="Constantia"/>
@@ -136,6 +137,20 @@
                 </Setter>
             </Style>
 
+            <!-- Style til InputBoxes på PaymentsView -->
+            <Style TargetType="Control" x:Key="PaymentInputBoxStyle">
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="Width" Value="200"/>
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="18"/>
+            </Style>
+            
+            
+            
             <!-- DataGrid Styles -->
 
             <!-- Style til DataGrid -->
