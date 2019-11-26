@@ -35,7 +35,8 @@ namespace DesktopUI.Helpers
         {
             if (string.Equals(value, GetBoundPassword(d)))
             {
-                return; // and this is how we prevent infinite recursion
+                // and this is how we prevent infinite recursion
+                return;
             }
 
             d.SetValue(BoundPasswordProperty, value);

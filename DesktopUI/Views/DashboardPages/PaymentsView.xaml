@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DesktopUI.Views.DashboardPages"
              mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="750"
-             Background="PaleGoldenrod">
+             Background="{StaticResource PrimaryBackgroundColor}">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -49,7 +49,8 @@
                        Style="{StaticResource BaseFontFamily}"/>
                 <TextBox x:Name="Amount" 
                          DockPanel.Dock="Right"
-                         Style="{StaticResource PaymentInputBoxStyle}"/>
+                         Width="200"
+                         Style="{StaticResource InputBoxStyle}"/>
             </DockPanel>
         </StackPanel>
 
@@ -61,7 +62,8 @@
                        Style="{StaticResource BaseFontFamily}"/>
             <TextBox x:Name="Note" 
                      DockPanel.Dock="Right"
-                     Style="{StaticResource PaymentInputBoxStyle}"/>
+                     Width="200"
+                     Style="{StaticResource InputBoxStyle}"/>
         </DockPanel>
 
         <DockPanel Grid.Row="4" Grid.Column="0" LastChildFill="False" Margin="15 15 30 15">
@@ -72,7 +74,8 @@
                        Style="{StaticResource BaseFontFamily}"/>
             <TextBox x:Name="Receiver"
                      DockPanel.Dock="Right"
-                 Style="{StaticResource PaymentInputBoxStyle}"/>
+                     Width="200"
+                 Style="{StaticResource InputBoxStyle}"/>
         </DockPanel>
         
         <!-- Column 1-->
@@ -86,11 +89,12 @@
                    DockPanel.Dock="Right"
                    BorderBrush="Black"
                    BorderThickness="0 0 0 2"
-                   Width="160"
+                   Width="200"
                    Height="40"
                    HorizontalContentAlignment="Right"
                    VerticalContentAlignment="Center"
                    FontSize="20"/>
+            
         </DockPanel>
         
         <Button x:Name="Pay"
