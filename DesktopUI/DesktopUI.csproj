@@ -250,6 +250,8 @@
     <Resource Include="Images\checkbox_green.jpg" />
     <Resource Include="Images\checkbox_red.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\cookie_1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
