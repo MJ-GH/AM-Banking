@@ -8,7 +8,7 @@
         Title="AM Banking" Height="600" Width="800" 
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         Icon="..\Images\logo.ico">
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -18,11 +18,11 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="130"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.Background>
-            <ImageBrush ImageSource="..\Images\cookie_1.jpg" Stretch="Fill"/>
+            <ImageBrush ImageSource="..\Images\history_1_small.jpg" Stretch="Fill"/>
         </Grid.Background>
 
         <Button x:Name="ShowMainMenuPage"

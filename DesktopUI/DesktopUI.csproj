@@ -253,5 +253,8 @@
   <ItemGroup>
     <Resource Include="Images\cookie_1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\history_1_small.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
