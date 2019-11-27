@@ -45,14 +45,14 @@
                                     HeaderStyle="{StaticResource DataGridHeaderStyleRight}"
                                     CellStyle="{StaticResource DataGridCellStyleRight}">
                     <DataGridTextColumn.Binding>
-                        <MultiBinding StringFormat="{}{0}{1} DKK">
+                        <MultiBinding ConverterCulture="da-DK" StringFormat="{}{0}{1:C}">
                             <Binding Path="Function" Mode="OneWay"/>
                             <Binding Path="Amount" Mode="OneWay"/>
                         </MultiBinding>
                     </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Ny Saldo"
-                                    Binding="{Binding NewBalance, Mode=OneWay, StringFormat='{}{0} DKK'}"
+                </DataGridTextColumn>   
+                <DataGridTextColumn Header="Ny Saldo" 
+                                    Binding="{Binding NewBalance, Mode=OneWay, ConverterCulture='da-DK', StringFormat='{}{0:C}'}"
                                     HeaderStyle="{StaticResource DataGridHeaderStyleRight}"
                                     CellStyle="{StaticResource DataGridCellStyleRight}"/>
             </DataGrid.Columns>

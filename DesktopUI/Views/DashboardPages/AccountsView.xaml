@@ -48,7 +48,7 @@
                                     HeaderStyle="{StaticResource DataGridHeaderStyle}"
                                     CellStyle="{StaticResource DataGridCellStyle}"/>
                 <DataGridTextColumn Header="Saldo"
-                                    Binding="{Binding Balance, Mode=OneWay, StringFormat='{}{0} DKK'}"
+                                    Binding="{Binding Balance, Mode=OneWay, ConverterCulture='da-DK', StringFormat='{}{0:C}'}"
                                     HeaderStyle="{StaticResource DataGridHeaderStyleRight}"
                                     CellStyle="{StaticResource DataGridCellStyleRight}"/>
             </DataGrid.Columns>
