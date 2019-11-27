@@ -18,10 +18,13 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        
+        <!-- Copyright Label -->
         <Label Grid.Row="4" Grid.Column="0" 
                FontSize="12" FontFamily="Constantia"
                Content="AM Banking ©"/>
 
+        <!-- ContentControl -->
         <ContentControl x:Name="ActiveItem"
                         Grid.Row="0" Grid.Column="0" />
 

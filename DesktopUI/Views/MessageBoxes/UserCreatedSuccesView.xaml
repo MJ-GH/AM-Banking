@@ -9,6 +9,7 @@
         WindowStartupLocation="CenterScreen" WindowStyle="None" 
         AllowsTransparency="True">
     <Grid>
+        <!-- Baggrund -->
         <Grid.Background>
             <ImageBrush ImageSource="..\..\Images\checkbox_green.jpg"/>
         </Grid.Background>
@@ -19,23 +20,24 @@
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        
+        <!-- Tekst -->
         <TextBlock Grid.Column="1"
                    Text="Bruger Oprettet!"
                    TextWrapping="Wrap"
                    FontSize="20" FontFamily="Constantia" 
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <Label Grid.Column="1"
-               x:Name="TimeCreated"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"
+        <!-- Tidspunkt -->
+        <Label x:Name="TimeCreated"
+               Grid.Column="1"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
                FontSize="10"
-               Margin="0 45 0 0"
-               />
+               Margin="0 45 0 0"/>
 
-        <Button Grid.Column="2"
-                x:Name="CloseWindow" 
-                Style="{StaticResource CloseBtnStyle}"/>
-
+        <!-- X-knap -->
+        <Button x:Name="CloseWindow"
+                Grid.Column="2"
+                Style="{StaticResource xButton}"/>
     </Grid>
 </Window>

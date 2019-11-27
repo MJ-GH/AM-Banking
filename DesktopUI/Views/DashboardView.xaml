@@ -10,6 +10,11 @@
         Icon="..\Images\logo.ico">
 
     <Grid>
+        <!-- Baggrund -->
+        <Grid.Background>
+            <ImageBrush ImageSource="..\Images\history_1_small.jpg" Stretch="Fill"/>
+        </Grid.Background>
+        
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -18,34 +23,33 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="130"></ColumnDefinition>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid.Background>
-            <ImageBrush ImageSource="..\Images\history_1_small.jpg" Stretch="Fill"/>
-        </Grid.Background>
-
+        
+        <!-- Column 0 -->
         <Button x:Name="ShowMainMenuPage"
                 Grid.Row="0"
-                Style="{StaticResource DashboardBtnsStyle}">
-            <Label Content="Hovedmenu" Style="{StaticResource DashboardBtnLabelsStyle}"/>
+                Style="{StaticResource ButtonDashboard}">
+            <Label Content="Hovedmenu" Style="{StaticResource LabelButton}"/>
         </Button>
         <Button x:Name="ShowAccountsPage" 
                 Grid.Row="1"
-                Style="{StaticResource DashboardBtnsStyle}">
-            <Label Content="Konti" Style="{StaticResource DashboardBtnLabelsStyle}"/>
+                Style="{StaticResource ButtonDashboard}">
+            <Label Content="Konti" Style="{StaticResource LabelButton}"/>
         </Button>
         <Button x:Name="ShowTransactionsPage" 
                 Grid.Row="2"
-                Style="{StaticResource DashboardBtnsStyle}">
-            <Label Content="Transaktioner" Style="{StaticResource DashboardBtnLabelsStyle}"/>
+                Style="{StaticResource ButtonDashboard}">
+            <Label Content="Transaktioner" Style="{StaticResource LabelButton}"/>
         </Button>
         <Button x:Name="ShowPaymentsPage" 
                 Grid.Row="3"
-                Style="{StaticResource DashboardBtnsStyle}">
-            <Label Content="Overførsel" Style="{StaticResource DashboardBtnLabelsStyle}"/>
+                Style="{StaticResource ButtonDashboard}">
+            <Label Content="Overførsel" Style="{StaticResource LabelButton}"/>
         </Button>
 
+        <!-- Column 1 -->
         <ContentControl x:Name="ActiveItem"
                         Grid.Column="1" Grid.RowSpan="4"
                         Style="{StaticResource DashboardCCStyle}"/>

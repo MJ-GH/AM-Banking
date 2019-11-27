@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DesktopUI.Views"
              mc:Ignorable="d" d:DesignWidth="495" d:DesignHeight="577"
-             Background="{StaticResource PrimaryBackgroundColor}"
+             Background="{StaticResource White}"
              Loaded="UserControl_Loaded">
 
     <Grid>
@@ -22,82 +22,84 @@
         </Grid.ColumnDefinitions>
 
 
-        <!-- Top Label -->
+        <!-- Header Label -->
         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
-               Content="Opret Nu" Style="{StaticResource TopLabelStyle}"/>
+               Content="Opret Nu" Style="{StaticResource HeaderLabel}"/>
 
         <!-- InputBoxes -->
         <TextBox x:Name="FirstName"
                  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                  VerticalAlignment="Top"
                  Margin="0 0 25 0" 
-                 Style="{StaticResource InputBoxStyle}"/>
+                 Style="{StaticResource InputBox}"/>
         <TextBox x:Name="LastName" 
                  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
                  VerticalAlignment="Top"
                  Margin="25 0 0 0"
-                 Style="{StaticResource InputBoxStyle}"/>
+                 Style="{StaticResource InputBox}"/>
         <TextBox x:Name="PhoneNmb"
                  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                  VerticalAlignment="Bottom" 
                  Margin="0 75 25 0" 
-                 Style="{StaticResource InputBoxStyle}"/>
+                 Style="{StaticResource InputBox}"/>
         <TextBox x:Name="Email" 
                  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
                  VerticalAlignment="Bottom"
                  Margin="25 75 0 0"
-                 Style="{StaticResource InputBoxStyle}"/>
+                 Style="{StaticResource InputBox}"/>
         <PasswordBox x:Name="Psw"
                      Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                      VerticalAlignment="Center"
                      Margin="0 15 25 0"
-                     Style="{StaticResource InputBoxStyle}"/>
+                     Style="{StaticResource InputBox}"/>
         <PasswordBox x:Name="PswDup"
                      Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
                      VerticalAlignment="Center"
                      Margin="25 15 0 0" 
-                     Style="{StaticResource InputBoxStyle}"/>
+                     Style="{StaticResource InputBox}"/>
 
         <!-- Labels -->
         <Label Content="Fornavn"
                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                VerticalAlignment="Center"
                Margin="0 -40 25 0"
-               Style="{StaticResource InputBoxLabelStyle}"/>
+               Style="{StaticResource LabelInputBox}"/>
         <Label Content="Efternavn"
                Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
                VerticalAlignment="Center"
                Margin="25 -40 0 0"
-               Style="{StaticResource InputBoxLabelStyle}"/>
+               Style="{StaticResource LabelInputBox}"/>
         <Label Content="Tlf. Nr." 
                Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                VerticalAlignment="Top" 
                Margin="0 -2 25 -4"
-               Style="{StaticResource InputBoxLabelStyle}"/>
+               Style="{StaticResource LabelInputBox}"/>
         <Label Content="Email" 
                Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
                VerticalAlignment="Top" 
                Margin="25 -2 0 -4"
-               Style="{StaticResource InputBoxLabelStyle}"/>
+               Style="{StaticResource LabelInputBox}"/>
         <Label Content="Kodeord" 
                Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
                VerticalAlignment="Bottom"
                Margin="0 0 25 12"
-               Style="{StaticResource InputBoxLabelStyle}"/>
+               Style="{StaticResource LabelInputBox}"/>
         <Label Content="Gentag Kodeord" 
                Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" 
                VerticalAlignment="Bottom"
                Margin="25 0 0 12" 
-               Style="{StaticResource InputBoxLabelStyle}"/>
+               Style="{StaticResource LabelInputBox}"/>
 
         <!-- Buttons -->
         <Button Content="Bliv bruger!" x:Name="CreateUser"
                 Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
-                Style="{StaticResource SignUpBtnStyle}"/>
+                VerticalAlignment="Center"
+                Style="{StaticResource BlueButton}"/>
 
         <Button Content="Afbryd" x:Name="ShowLogin"
                 Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
-                Style="{StaticResource CancelBtnStyle}"/>
+                VerticalAlignment="Center"
+                Style="{StaticResource RedButton}"/>
 
     </Grid>
 </UserControl>

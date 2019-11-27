@@ -9,6 +9,7 @@
         WindowStartupLocation="CenterScreen" WindowStyle="None" 
         AllowsTransparency="True">
     <Grid>
+        <!-- Baggrund -->
         <Grid.Background>
             <ImageBrush ImageSource="..\..\Images\checkbox_red.jpg"/>
         </Grid.Background>
@@ -19,15 +20,17 @@
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        
+        <!-- Tekst -->
         <TextBlock Grid.Column="1"
                    Text="Ugyldigt Login!"
                    TextWrapping="Wrap"
                    FontSize="20" FontFamily="Constantia" 
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
+        <!-- X-knap -->
         <Button Grid.Column="2"
                 x:Name="CloseWindow" 
-                Style="{StaticResource CloseBtnStyle}"/>
-
+                Style="{StaticResource xButton}"/>
     </Grid>
 </Window>

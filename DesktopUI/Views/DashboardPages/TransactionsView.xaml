@@ -18,11 +18,13 @@
         </Grid.ColumnDefinitions>
 
 
+        <!-- Header Label -->
         <Label Content="Transaktioner"
-               FontSize="30" 
-               HorizontalAlignment="Center" VerticalAlignment="Center"
-               Style="{StaticResource BaseFontFamily}"/>
+               FontSize="36"
+               Foreground="{StaticResource White}"
+               Style="{StaticResource HeaderLabel}"/>
 
+        <!-- DataGrid -->
         <DataGrid x:Name="Transactions" 
                   Grid.Row="1"
                   Style="{StaticResource AlternatingRowBackGroundStyle}">

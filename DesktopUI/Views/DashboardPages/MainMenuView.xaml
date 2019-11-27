@@ -8,13 +8,17 @@
 
     <Grid>
         <Label x:Name="FullName" 
-               FontSize="42" HorizontalAlignment="Center"
+               Margin="15"
+               FontSize="40"
+               VerticalAlignment="Top"
+               Foreground="{StaticResource White}"
+               Style="{StaticResource HeaderLabel}"
                ContentStringFormat="Velkommen {0}"/>
 
         <Button x:Name="LogOut"
                 Content="Log Ud"
-                Width="70" Height="30"
+                Margin="0 0 0 15"
                 VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                Background="DarkRed" Margin="0 0 0 10"/>
+                Style="{StaticResource RedButton}"/>
     </Grid>
 </UserControl>

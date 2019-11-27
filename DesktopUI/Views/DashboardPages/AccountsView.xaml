@@ -17,11 +17,13 @@
         </Grid.ColumnDefinitions>
 
 
+        <!-- Header Label-->
         <Label Content="Dine Konti"
-               FontSize="30" 
-               HorizontalAlignment="Center" VerticalAlignment="Center" 
-               Style="{StaticResource BaseFontFamily}"/>
+               FontSize="36"
+               Foreground="{StaticResource White}"
+               Style="{StaticResource HeaderLabel}"/>
 
+        <!-- DataGrid-->
         <DataGrid x:Name="Accounts"
                   Grid.Row="1"
                   Style="{StaticResource NoAlternatingBackgroundStyle}">
