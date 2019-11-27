@@ -8,7 +8,7 @@
         Title="AM Banking" Height="600" Width="500" Background="#f7f1e3"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         Icon="..\Images\logo.ico">
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -18,15 +18,15 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        
-        <!-- Copyright Label -->
-        <Label Grid.Row="4" Grid.Column="0" 
-               FontSize="12" FontFamily="Constantia"
-               Content="AM Banking ©"/>
 
         <!-- ContentControl -->
         <ContentControl x:Name="ActiveItem"
                         Grid.Row="0" Grid.Column="0" />
 
+        <!-- Copyright Label -->
+        <Label x:Name="Copyright"
+               Grid.Row="4" Grid.Column="0" 
+               FontSize="11" FontFamily="Constantia"
+               ContentStringFormat="&#169;{0} AM Banking A/S"/>
     </Grid>
 </Window>

@@ -67,5 +67,10 @@ namespace DesktopUI.ViewModels
             //Application.Current.MainWindow.Close();
             //(GetView() as Window).Close();
         }
+
+        public string Copyright
+        {
+            get { return $"{ DateTime.Now.Year }"; }
+        }
     }
 }
