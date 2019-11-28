@@ -2,9 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:DesktopUI.Views.DashboardPages"
-             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="750"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="670"
              Background="{StaticResource White}">
 
     <Grid>
@@ -21,7 +21,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        
+
         <!-- Header Label -->
         <Label Content="Overførsel"
                Grid.ColumnSpan="2"
@@ -34,21 +34,25 @@
                 <Label Content="Hæves på:"
                        DockPanel.Dock="Left"
                        FontSize="15"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom"
                        Style="{StaticResource BaseFontFamily}"/>
-                <ComboBox x:Name="Sender"
-                         DockPanel.Dock="Right"
-                         Style="{StaticResource InputBoxPayments}"/>
+                <xctk:WatermarkComboBox x:Name="Sender"
+                                        DockPanel.Dock="Right"
+                                        FontSize="12"
+                                        Watermark="Vælg din konto..."
+                                        Style="{StaticResource InputBoxPayments}"/>
             </DockPanel>
             <DockPanel LastChildFill="False" Margin="15 15 30 15">
                 <Label Content="Beløb:"
                        DockPanel.Dock="Left"
                        FontSize="15"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom"
                        Style="{StaticResource BaseFontFamily}"/>
-                <TextBox x:Name="Amount" 
+                <xctk:WatermarkTextBox x:Name="Amount"
                          DockPanel.Dock="Right"
                          Width="200"
+                         FontSize="12"
+                         Watermark="Indtast beløb i kroner.."
                          Style="{StaticResource InputBoxPayments}"/>
             </DockPanel>
         </StackPanel>
@@ -57,11 +61,13 @@
             <Label Content="Note:"
                        DockPanel.Dock="Left"
                        FontSize="15"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom"
                        Style="{StaticResource BaseFontFamily}"/>
-            <TextBox x:Name="Note" 
+            <xctk:WatermarkTextBox x:Name="Note" 
                      DockPanel.Dock="Right"
                      Width="200"
+                     FontSize="12"
+                     Watermark="Tekst til beløbsmodtager..."
                      Style="{StaticResource InputBoxPayments}"/>
         </DockPanel>
 
@@ -69,14 +75,16 @@
             <Label Content="Modtager:"
                        DockPanel.Dock="Left"
                        FontSize="15"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       HorizontalAlignment="Center" VerticalAlignment="Bottom"
                        Style="{StaticResource BaseFontFamily}"/>
-            <TextBox x:Name="Receiver"
+            <xctk:WatermarkTextBox x:Name="Receiver"
                      DockPanel.Dock="Right"
                      Width="200"
+                     FontSize="12"
+                     Watermark="f.eks. 12345678"
                  Style="{StaticResource InputBoxPayments}"/>
         </DockPanel>
-        
+
         <!-- Column 1-->
         <DockPanel Grid.Row="2" Grid.Column="1" LastChildFill="False" Margin="15 15 70 15">
             <Label Content="Saldo:"
@@ -93,9 +101,9 @@
                    HorizontalContentAlignment="Right"
                    VerticalContentAlignment="Center"
                    FontSize="20"/>
-            
+
         </DockPanel>
-        
+
         <Button x:Name="Pay"
                 Content="Overfør"
                 Grid.Row="4" Grid.Column="1"
