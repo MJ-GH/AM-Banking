@@ -40,7 +40,7 @@
         <TextBox x:Name="PhoneNmb"
                  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                  VerticalAlignment="Bottom" 
-                 Margin="0 75 25 0" 
+                 Margin="0 75 25 0"
                  Style="{StaticResource InputBox}"/>
         <TextBox x:Name="Email" 
                  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
