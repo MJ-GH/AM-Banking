@@ -6,6 +6,9 @@
              xmlns:local="clr-namespace:DesktopUI.Views.DashboardPages"
              mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
 
+
+
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"></RowDefinition>
@@ -16,6 +19,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        
 
         <!-- Header Label-->
         <Label Content="Dine Konti"
