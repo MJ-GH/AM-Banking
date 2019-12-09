@@ -18,9 +18,9 @@ namespace DesktopUI.Views
     /// <summary>
     /// Interaction logic for SignUpView.xaml
     /// </summary>
-    public partial class SignUpView : UserControl
+    public partial class SignUpUserView : UserControl
     {
-        public SignUpView()
+        public SignUpUserView()
         {
             InitializeComponent();
         }

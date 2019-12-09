@@ -82,10 +82,6 @@ namespace DesktopUI.ViewModels
                                         reader.GetInt32(0), 
                                         reader.GetString(1).ToString(), 
                                         reader.GetString(2).ToString());
-
-
-                                    //HENT OGSÅ BRUGERENS KONTI
-
                                 }
                             }
                         };
@@ -105,42 +101,5 @@ namespace DesktopUI.ViewModels
                 }
             }
         }
-
-
-
-
-
-
-
-
-        //private BindableCollection<UserModel> _accounts = new BindableCollection<UserModel>();
-        //public string FirstName
-        //{
-        //    get { return _firstName; }
-        //    set
-        //    {
-        //        _firstName = value;
-        //        NotifyOfPropertyChange(() => FirstName);
-        //        NotifyOfPropertyChange(() => FullName);
-        //    }
-        //}
-
-        //public string LastName
-        //{
-        //    get { return _lastName; }
-        //    set
-        //    {
-        //        _lastName = value;
-        //        NotifyOfPropertyChange(() => LastName);
-        //        NotifyOfPropertyChange(() => FullName);
-        //    }
-        //}
-
-        //public string FullName
-        //{
-        //    get { return $"{ FirstName } { LastName }"; }
-        //}
-
-
     }
 }

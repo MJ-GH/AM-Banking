@@ -15,10 +15,10 @@ namespace DesktopUI.ViewModels.DashboardPages
     public class AccountsViewModel : Screen
     {
         private int _accountNmb;
-        private string _name;
+        private string _accountType;
+        private string _accountName;
         private decimal _balance;
         private BindableCollection<AccountModel> _accounts = new BindableCollection<AccountModel>();
-        IWindowManager manager = new WindowManager();
 
         public int AccountNmb
         {
@@ -29,13 +29,22 @@ namespace DesktopUI.ViewModels.DashboardPages
                 NotifyOfPropertyChange(() => AccountNmb);
             }
         }
-        public string Name
+        public string AccountType
         {
-            get { return _name; }
+            get { return _accountType; }
+            set 
+            { 
+                _accountType = value;
+                NotifyOfPropertyChange(() => AccountType);
+            }
+        }
+        public string AccountName
+        {
+            get { return _accountName; }
             set
             {
-                _name = value;
-                NotifyOfPropertyChange(() => Name);
+                _accountName = value;
+                NotifyOfPropertyChange(() => AccountName);
             }
         }
         public decimal Balance
@@ -79,12 +88,11 @@ namespace DesktopUI.ViewModels.DashboardPages
 
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
-                        Accounts.Add(new AccountModel
-                        {
+                        Accounts.Add(new AccountModel(
                             AccountNmb = Convert.ToInt32(dr[0]),
-                            Name = dr[1].ToString(),
-                            Balance = Convert.ToDecimal(dr[2])
-                        });
+                            AccountType = dr[1].ToString(),
+                            AccountName = dr[2].ToString(),
+                            Balance = Convert.ToDecimal(dr[3])));
                     }
                 }
             }

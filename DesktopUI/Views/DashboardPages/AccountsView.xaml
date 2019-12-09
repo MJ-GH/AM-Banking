@@ -47,8 +47,12 @@
                         </Style>
                     </DataGridTextColumn.CellStyle>
                 </DataGridTextColumn>
+                <DataGridTextColumn Header="Konto Type"
+                                    Binding="{Binding AccountType, Mode=OneWay}"
+                                    HeaderStyle="{StaticResource DataGridHeaderStyle}"
+                                    CellStyle="{StaticResource DataGridCellStyle}"/>
                 <DataGridTextColumn Header="Navn"
-                                    Binding="{Binding Name, Mode=OneWay}"
+                                    Binding="{Binding AccountName, Mode=OneWay}"
                                     HeaderStyle="{StaticResource DataGridHeaderStyle}"
                                     CellStyle="{StaticResource DataGridCellStyle}"/>
                 <DataGridTextColumn Header="Saldo"

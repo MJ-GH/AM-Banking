@@ -52,7 +52,7 @@ namespace DesktopUI.Models
         }
 
         /// <summary>
-        /// Constructor to get the user's info upon login
+        /// Constructor to get the user's info
         /// </summary>
         /// <param name="firstname">Firstname property</param>
         /// <param name="lastname">Lastname property</param>
@@ -62,6 +62,15 @@ namespace DesktopUI.Models
             Id = id;
             FirstName = firstname;
             LastName = lastname;
+        }
+
+        /// <summary>
+        /// Retrieve ID
+        /// </summary>
+        /// <param name="id">ID property</param>
+        public UserModel(int id)
+        {
+            Id = id;
         }
     }
 }

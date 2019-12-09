@@ -9,6 +9,5 @@ namespace DesktopUI.ViewModels.DashboardPages
 {
     public class PaymentsViewModel : Screen
     {
-
     }
 }

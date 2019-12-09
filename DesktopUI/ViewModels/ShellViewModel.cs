@@ -15,7 +15,8 @@ namespace DesktopUI.ViewModels
     public class ShellViewModel : Conductor<object>, 
         IHandle<SignUpPageRequestEvent>, 
         IHandle<LogInPageRequestEvent>, 
-        IHandle<DashboardRequestEvent>
+        IHandle<DashboardRequestEvent>,
+        IHandle<SignUpAccountPageRequest>
     {
         private DispatcherTimer dt = new DispatcherTimer();
         private IEventAggregator _events;
@@ -46,9 +47,12 @@ namespace DesktopUI.ViewModels
         public void Handle(SignUpPageRequestEvent message)
         {
             // Laver en ny instans af SignUpViewModel hver gang, så brugerens data ikke tilfældigt bliver gemt.
-            ActivateItem(IoC.Get<SignUpViewModel>());
+            ActivateItem(IoC.Get<SignUpUserViewModel>());
         }
-
+        public void Handle(SignUpAccountPageRequest message)
+        {
+            ActivateItem(IoC.Get<SignUpAccountViewModel>());
+        }
         public void Handle(LogInPageRequestEvent message)
         {
             // Laver en ny instans af LoginViewModel hver gang, så brugerens data ikke tilfældigt bliver gemt.
@@ -59,13 +63,7 @@ namespace DesktopUI.ViewModels
         {
             _manager.ShowWindow(new DashboardViewModel(u, _events));
 
-            //ShellViewModel shell = this;
-            //shell.TryClose();
             TryClose();
-
-            // Ødelægger MVVM mønstret med denne linje, men jeg nøjes med det for nu, fordi jeg kan ikke få andet til at virke :)
-            //Application.Current.MainWindow.Close();
-            //(GetView() as Window).Close();
         }
 
         public string Copyright

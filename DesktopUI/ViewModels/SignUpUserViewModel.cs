@@ -13,7 +13,7 @@ using System.Windows;
 
 namespace DesktopUI.ViewModels
 {
-    public class SignUpViewModel : Screen
+    public class SignUpUserViewModel : Screen
     {
         private IEventAggregator _events;
         IWindowManager manager = new WindowManager();
@@ -23,7 +23,8 @@ namespace DesktopUI.ViewModels
         private string _email;
         private string _psw;
         private string _pswDup;
-        private bool isExecuted = false;
+        private bool isValidationOkay = false;
+        public static UserModel newUser;
 
         public string FirstName
         {
@@ -80,36 +81,40 @@ namespace DesktopUI.ViewModels
             }
         }
 
-
-        public SignUpViewModel(IEventAggregator events)
+        public SignUpUserViewModel(IEventAggregator events)
         {
             _events = events;
         }
 
-        public void ShowLogin()
+
+        public void ShowLoginPage()
         {
             _events.PublishOnUIThread(new LogInPageRequestEvent());
         }
 
-
-        public void CreateUser()
+        public void ShowSignUpAccountPage()
         {
-            if (string.IsNullOrWhiteSpace(FirstName)    ||
-                string.IsNullOrWhiteSpace(LastName)     ||
-                string.IsNullOrWhiteSpace(PhoneNmb)     ||
-                string.IsNullOrWhiteSpace(Email)        ||
-                string.IsNullOrWhiteSpace(Psw)          ||
+            _events.PublishOnUIThread(new SignUpAccountPageRequest());
+        }
+
+        public void ValidateForm()
+        {
+            if (string.IsNullOrWhiteSpace(FirstName) ||
+                string.IsNullOrWhiteSpace(LastName) ||
+                string.IsNullOrWhiteSpace(PhoneNmb) ||
+                string.IsNullOrWhiteSpace(Email) ||
+                string.IsNullOrWhiteSpace(Psw) ||
                 string.IsNullOrWhiteSpace(PswDup))
             {
                 manager.ShowDialog(new IncompleteFormErrorViewModel());
             }
-            else if (!int.TryParse(PhoneNmb, out int parsedValue))
-            {
-                manager.ShowDialog(new PhoneNumberHasLettersErrorViewModel());
-            }
             else if (PhoneNmb.Length != 8)
             {
                 manager.ShowDialog(new PhoneNumberLengthErrorViewModel());
+            }
+            else if (!int.TryParse(PhoneNmb, out int parsedValue))
+            {
+                manager.ShowDialog(new PhoneNumberHasLettersErrorViewModel());
             }
             else if (Psw != PswDup)
             {
@@ -117,40 +122,7 @@ namespace DesktopUI.ViewModels
             }
             else
             {
-                UserModel newUser = new UserModel(FirstName, LastName, PhoneNmb, Email, Psw);
-
                 try
-                {
-                    using (SqlConnection conn = new SqlConnection(DBcon.Connect()))
-                    {
-                        conn.Open();
-
-                        SqlCommand cmd = new SqlCommand("spOpretKunde", conn)
-                        {
-                            CommandType = CommandType.StoredProcedure
-                        };
-                        cmd.Parameters.AddWithValue("@fornavn", newUser.FirstName);
-                        cmd.Parameters.AddWithValue("@efternavn", newUser.LastName);
-                        cmd.Parameters.AddWithValue("@tlfnr", newUser.PhoneNmb);
-                        cmd.Parameters.AddWithValue("@email", newUser.Email);
-                        cmd.Parameters.AddWithValue("@kodeord", newUser.Psw);
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    isExecuted = true;
-                }
-                catch (Exception)
-                {
-                    isExecuted = false;
-                }
-
-                if (isExecuted == true)
-                {
-                    manager.ShowDialog(new UserCreatedSuccesViewModel());
-
-                    _events.PublishOnUIThread(new LogInPageRequestEvent());
-                }
-                else if (isExecuted == false)
                 {
                     using (SqlConnection conn = new SqlConnection(DBcon.Connect()))
                     {
@@ -162,11 +134,11 @@ namespace DesktopUI.ViewModels
                         };
                         cmd1.Parameters.AddWithValue("@tlfnr", PhoneNmb);
                         cmd1.ExecuteNonQuery();
-                        int count1 = Convert.ToInt32(cmd1.ExecuteScalar());
-                        if (count1 == 1)
+                        int count = Convert.ToInt32(cmd1.ExecuteScalar());
+                        if (count == 1)
                         {
                             MessageBox.Show("Telefonnummeret er allerede i brug!", "AM Banking - Telefonnummer Fejl!", MessageBoxButton.OK, MessageBoxImage.Warning);
-                            isExecuted = false;
+                            isValidationOkay = false;
                         }
                         else
                         {
@@ -180,10 +152,24 @@ namespace DesktopUI.ViewModels
                             if (count2 == 1)
                             {
                                 MessageBox.Show("Emailen er allerede i brug!", "AM Banking - Email Fejl!", MessageBoxButton.OK, MessageBoxImage.Warning);
-                                isExecuted = false;
+                                isValidationOkay = false;
+                            }
+                            else
+                            {
+                                isValidationOkay = true;
                             }
                         }
                     }
+                }
+                catch (Exception)
+                {
+                    isValidationOkay = false;
+                }
+
+                if (isValidationOkay == true)
+                {
+                    newUser = new UserModel(FirstName, LastName, PhoneNmb, Email, Psw);
+                    ShowSignUpAccountPage();
                 }
             }
         }

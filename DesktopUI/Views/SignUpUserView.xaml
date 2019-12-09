@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="DesktopUI.Views.SignUpView"
+﻿<UserControl x:Class="DesktopUI.Views.SignUpUserView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -32,7 +32,7 @@
                  VerticalAlignment="Top"
                  Margin="0 0 25 0" 
                  Style="{StaticResource InputBox}"/>
-        <TextBox x:Name="LastName" 
+        <TextBox x:Name="LastName"
                  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
                  VerticalAlignment="Top"
                  Margin="25 0 0 0"
@@ -91,15 +91,14 @@
                Style="{StaticResource LabelInputBox}"/>
 
         <!-- Buttons -->
-        <Button Content="Bliv bruger!" x:Name="CreateUser"
+        <Button Content="Videre!" x:Name="ValidateForm"
                 Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
                 VerticalAlignment="Center"
                 Style="{StaticResource BlueButton}"/>
 
-        <Button Content="Afbryd" x:Name="ShowLogin"
+        <Button Content="Afbryd" x:Name="ShowLoginPage"
                 Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
                 VerticalAlignment="Center"
                 Style="{StaticResource RedButton}"/>
-
     </Grid>
 </UserControl>
