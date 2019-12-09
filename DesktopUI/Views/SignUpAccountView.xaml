@@ -15,64 +15,71 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
 
         <!-- Header Label -->
-        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
-               Content="Kontotyper" Style="{StaticResource HeaderLabel}"/>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+               Margin="25"
+               Content="Opret Konto" Style="{StaticResource HeaderLabel}"/>
 
         <ListBox x:Name="SomeTypes"
-                 Grid.Row="1" Grid.ColumnSpan="2"
-                 Width="200"
-                 Margin="0 0 0 20"
+                 Grid.Row="1"
+                 MaxWidth="150"
+                 MinHeight="100"
+                 Margin="5"
+                 FontSize="15"
                  ItemsSource="{Binding SomeTypes}"
                  SelectedItem="{Binding SelectedUserType, Mode=OneWayToSource}"
                  SelectedValue="{Binding Path=SelectedUserType, Mode=TwoWay}"
                  SelectedValuePath="UserTypes">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding UserTypes}"/>
+                    <TextBlock Margin="0 5 5 5" Text="{Binding UserTypes}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
         <ListBox x:Name="AccountTypes"
-                 Grid.Row="2" Grid.ColumnSpan="2"
-                 Width="200"
-                 Margin="0 20 0 0"
+                 Grid.Row="2"
+                 MaxWidth="150"
+                 MinHeight="100"
+                 Margin="5 20 5 5"
+                 FontSize="15"
                  ItemsSource="{Binding ElementName=SomeTypes, Path=SelectedItem.AccountTypes}"
-                 SelectedItem="{Binding Path=SelectedAccountType, Mode=TwoWay}">
-        </ListBox>
+                 SelectedItem="{Binding Path=SelectedAccountType, Mode=TwoWay}"/>
 
-        <TextBox x:Name="AccountName" 
-                 Grid.Row="2" Grid.Column="2"
-                 Width="150" Height="30"
-                 Background="Transparent"
-                 BorderBrush="Black"
-                 BorderThickness="0 0 0 2"/>
+        <StackPanel Grid.Row="2" Grid.Column="1"
+                    Orientation="Vertical"
+                    VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBox x:Name="AccountName" 
+                 Style="{StaticResource InputBox}"/>
 
-        <Label Grid.Row="2" Grid.Column="2"
-               Content="Navn"
-               HorizontalAlignment="Center" VerticalAlignment="Center"
-               Margin="0 50 0 0"/>
+            <Label Content="Navn"
+                   Style="{StaticResource LabelInputBox}"/>
+        </StackPanel>
 
         <Button x:Name="CreateUserAndAccount"
-                Grid.Row="3" Grid.ColumnSpan="2"
-                Width="100" Height="25"
-                Content="OK - Opret"/>
+                Grid.Row="4"
+                Content="OK - Opret"
+                VerticalAlignment="Center"
+                Margin="50 0 0 0"
+                Style="{StaticResource BlueButton}"/>
 
-        <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
-                Width="100" Height="25"
-                Content="Afbryd"/>
+        <Button x:Name="ShowSignUpPage"
+                Grid.Row="4" Grid.Column="1"
+                Content="Afbryd"
+                VerticalAlignment="Center"
+                Margin="0 0 50 0"
+                Style="{StaticResource RedButton}"/>
     </Grid>
 </UserControl>
