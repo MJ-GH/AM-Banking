@@ -125,12 +125,12 @@ namespace DesktopUI.ViewModels
 
         public void ShowSignUpPage()
         {
-            _events.PublishOnUIThread(new SignUpPageRequestEvent());
+            _events.PublishOnUIThread(new SignUpUserPageRequest());
         }
 
         public void ShowLoginPage()
         {
-            _events.PublishOnUIThread(new LogInPageRequestEvent());
+            _events.PublishOnUIThread(new LogInPageRequest());
         }
 
         public void GetTypes()

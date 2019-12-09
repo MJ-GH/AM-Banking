@@ -13,9 +13,9 @@ using System.Windows.Threading;
 namespace DesktopUI.ViewModels
 {
     public class ShellViewModel : Conductor<object>, 
-        IHandle<SignUpPageRequestEvent>, 
-        IHandle<LogInPageRequestEvent>, 
-        IHandle<DashboardRequestEvent>,
+        IHandle<SignUpUserPageRequest>, 
+        IHandle<LogInPageRequest>, 
+        IHandle<DashboardRequest>,
         IHandle<SignUpAccountPageRequest>
     {
         private DispatcherTimer dt = new DispatcherTimer();
@@ -44,7 +44,7 @@ namespace DesktopUI.ViewModels
             ActivateItem(IoC.Get<LoginViewModel>());
         }
 
-        public void Handle(SignUpPageRequestEvent message)
+        public void Handle(SignUpUserPageRequest message)
         {
             // Laver en ny instans af SignUpViewModel hver gang, så brugerens data ikke tilfældigt bliver gemt.
             ActivateItem(IoC.Get<SignUpUserViewModel>());
@@ -53,13 +53,13 @@ namespace DesktopUI.ViewModels
         {
             ActivateItem(IoC.Get<SignUpAccountViewModel>());
         }
-        public void Handle(LogInPageRequestEvent message)
+        public void Handle(LogInPageRequest message)
         {
             // Laver en ny instans af LoginViewModel hver gang, så brugerens data ikke tilfældigt bliver gemt.
             ActivateItem(IoC.Get<LoginViewModel>());
         }
 
-        public void Handle(DashboardRequestEvent message)
+        public void Handle(DashboardRequest message)
         {
             _manager.ShowWindow(new DashboardViewModel(u, _events));
 

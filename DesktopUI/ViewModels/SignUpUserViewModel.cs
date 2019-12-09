@@ -89,7 +89,7 @@ namespace DesktopUI.ViewModels
 
         public void ShowLoginPage()
         {
-            _events.PublishOnUIThread(new LogInPageRequestEvent());
+            _events.PublishOnUIThread(new LogInPageRequest());
         }
 
         public void ShowSignUpAccountPage()

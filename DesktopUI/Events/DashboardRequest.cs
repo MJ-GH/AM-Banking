@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesktopUI.Events
 {
-    public class LogInPageRequestEvent
+    public class DashboardRequest
     {
     }
 }

@@ -45,7 +45,7 @@ namespace DesktopUI.ViewModels
 
         public void ShowSignUp()
         {
-            _events.PublishOnUIThread(new SignUpPageRequestEvent());
+            _events.PublishOnUIThread(new SignUpUserPageRequest());
         }
 
         public void Login()
@@ -86,7 +86,7 @@ namespace DesktopUI.ViewModels
                             }
                         };
 
-                        _events.PublishOnUIThread(new DashboardRequestEvent());
+                        _events.PublishOnUIThread(new DashboardRequest());
                     }
                     else
                     {

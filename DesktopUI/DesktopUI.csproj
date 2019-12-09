@@ -115,11 +115,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DBcon.cs" />
-    <Compile Include="Events\DashboardRequestEvent.cs" />
-    <Compile Include="Events\LogInPageRequestEvent.cs" />
+    <Compile Include="Events\DashboardRequest.cs" />
+    <Compile Include="Events\LogInPageRequest.cs" />
     <Compile Include="Events\LogOutEvent.cs" />
     <Compile Include="Events\SignUpAccountPageRequest.cs" />
-    <Compile Include="Events\SignUpPageRequestEvent.cs" />
+    <Compile Include="Events\SignUpUserPageRequest.cs" />
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\AccountTypeModel.cs" />
