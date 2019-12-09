@@ -23,10 +23,9 @@
         
         <!-- Tekst -->
         <TextBlock Grid.Column="1"
-                   Text="Bruger Oprettet!"
                    TextWrapping="Wrap"
                    FontSize="20" FontFamily="Constantia" 
-                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="31,34,31,52"><Run Text="Bruger"/><Run Text=" og konto o"/><Run Text="prettet!"/></TextBlock>
 
         <!-- Tidspunkt -->
         <Label x:Name="TimeCreated"
