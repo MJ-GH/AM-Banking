@@ -60,12 +60,32 @@
 
         <StackPanel Grid.Row="2" Grid.Column="1"
                     Orientation="Vertical"
-                    VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBox x:Name="AccountName" 
+                    VerticalAlignment="Center">
+            
+            <Grid>
+                <Viewbox Width="20" Height="20" Margin="0 5 185 0">
+                    <Grid Width="20" Height="20">
+                        <TextBlock Text="?"
+                                   TextAlignment="Center"
+                                   HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+                        
+                        <Ellipse Stroke="Black"
+                                 Cursor="Help"
+                                 Fill="Transparent"
+                                 ToolTip="Giv din konto et navn som bedst beskriver den og dets formål."
+                                 ToolTipService.InitialShowDelay="300"
+                                 ToolTipService.ShowDuration="3600000"/>
+                    </Grid>
+                </Viewbox>
+
+                <TextBox x:Name="AccountName"
                  Style="{StaticResource InputBox}"/>
+            </Grid>
 
             <Label Content="Navn"
-                   Style="{StaticResource LabelInputBox}"/>
+                   Style="{StaticResource LabelInputBox}"
+                   ToolTipService.InitialShowDelay="250"
+                   ToolTip="Okay"/>
         </StackPanel>
 
         <Button x:Name="CreateUserAndAccount"
