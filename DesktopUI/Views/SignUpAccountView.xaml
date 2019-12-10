@@ -83,9 +83,7 @@
             </Grid>
 
             <Label Content="Navn"
-                   Style="{StaticResource LabelInputBox}"
-                   ToolTipService.InitialShowDelay="250"
-                   ToolTip="Okay"/>
+                   Style="{StaticResource LabelInputBox}"/>
         </StackPanel>
 
         <Button x:Name="CreateUserAndAccount"
