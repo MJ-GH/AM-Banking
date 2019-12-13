@@ -12,6 +12,7 @@ namespace DesktopUI.ViewModels.DashboardPages
 {
     public class TransactionsViewModel : Screen
     {
+        private int _transactionID;
         private int _accountNmb;
         private string _note;
         private char _function;
@@ -19,6 +20,16 @@ namespace DesktopUI.ViewModels.DashboardPages
         private decimal _newBalance;
         private string _date;
         private BindableCollection<TransactionModel> _transactions = new BindableCollection<TransactionModel>();
+
+        public int TransactionID
+        {
+            get { return _transactionID; }
+            set 
+            {
+                _transactionID = value;
+                NotifyOfPropertyChange(() => TransactionID);
+            }
+        }
 
         public int AccountNmb
         {
@@ -107,12 +118,13 @@ namespace DesktopUI.ViewModels.DashboardPages
                     {
                         Transactions.Add(new TransactionModel
                         {
-                            AccountNmb = Convert.ToInt32(dr[0]),
-                            Note = dr[1].ToString(),
-                            Function = Convert.ToChar(dr[2]),
-                            Amount = Convert.ToDecimal(dr[3]),
-                            NewBalance = Convert.ToDecimal(dr[4]),
-                            Date = dr[5].ToString()
+                            TransactionID = Convert.ToInt32(dr[0]),
+                            AccountNmb = Convert.ToInt32(dr[1]),
+                            Note = dr[2].ToString(),
+                            Function = Convert.ToChar(dr[3]),
+                            Amount = Convert.ToDecimal(dr[4]),
+                            NewBalance = Convert.ToDecimal(dr[5]),
+                            Date = dr[6].ToString()
                         });
                     }
                 }

@@ -19,6 +19,13 @@ namespace DesktopUI.Models
             AccountTypeID = accountTypeID;
         }
 
+        public AccountModel(string accountName, int accountNmb, decimal balance)
+        {
+            AccountName = accountName;
+            AccountNmb = accountNmb;
+            Balance = balance;
+        }
+
         public AccountModel(int accountNmb, string accountType, string accountName, decimal balance)
         {
             AccountNmb = accountNmb;

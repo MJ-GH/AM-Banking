@@ -133,7 +133,7 @@ namespace DesktopUI.ViewModels
                             CommandType = CommandType.StoredProcedure
                         };
                         cmd1.Parameters.AddWithValue("@tlfnr", PhoneNmb);
-                        cmd1.ExecuteNonQuery();
+
                         int count = Convert.ToInt32(cmd1.ExecuteScalar());
                         if (count == 1)
                         {
@@ -147,7 +147,7 @@ namespace DesktopUI.ViewModels
                                 CommandType = CommandType.StoredProcedure
                             };
                             cmd2.Parameters.AddWithValue("@email", Email);
-                            cmd2.ExecuteNonQuery();
+
                             int count2 = Convert.ToInt32(cmd2.ExecuteScalar());
                             if (count2 == 1)
                             {

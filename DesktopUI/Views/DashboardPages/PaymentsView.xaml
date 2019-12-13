@@ -4,13 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:local="clr-namespace:DesktopUI.Helpers"
              mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="670"
              Background="{StaticResource White}">
+
+    <UserControl.Resources>
+        <local:StringToDecimalConverter x:Key="StringToDecimal" />
+    </UserControl.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
@@ -29,86 +35,81 @@
                Style="{StaticResource HeaderLabel}"/>
 
         <!-- Column 0 -->
-        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical">
-            <DockPanel LastChildFill="False" Margin="15 15 30 15">
-                <Label Content="Hæves på:"
-                       DockPanel.Dock="Left"
-                       FontSize="15"
-                       HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                       Style="{StaticResource BaseFontFamily}"/>
-                <xctk:WatermarkComboBox x:Name="Sender"
-                                        DockPanel.Dock="Right"
-                                        FontSize="12"
-                                        Watermark="Vælg din konto..."
-                                        Style="{StaticResource InputBoxPayments}"/>
-            </DockPanel>
-            <DockPanel LastChildFill="False" Margin="15 15 30 15">
-                <Label Content="Beløb:"
-                       DockPanel.Dock="Left"
-                       FontSize="15"
-                       HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                       Style="{StaticResource BaseFontFamily}"/>
-                <xctk:WatermarkTextBox x:Name="Amount"
-                         DockPanel.Dock="Right"
-                         Width="200"
-                         FontSize="12"
-                         Watermark="Indtast beløb i kroner.."
-                         Style="{StaticResource InputBoxPayments}"/>
-            </DockPanel>
-        </StackPanel>
+        <DockPanel Grid.Row="2" LastChildFill="False" Margin="15 15 30 15">
+            <Label Content="Hæves på:"
+                   DockPanel.Dock="Left"
+                   FontSize="15"
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                   Style="{StaticResource BaseFontFamily}"/>
+            <xctk:WatermarkComboBox x:Name="Sender"
+                                    ItemsSource="{Binding Sender}"
+                                    SelectedItem="{Binding SelectedAccountNmb, Mode=OneTime}"
+                                    SelectedValue="{Binding Path=SelectedAccountNmb, Mode=TwoWay}"
+                                    SelectedValuePath="AccountNmb"
+                                    DisplayMemberPath="AccountName"
+                                    DockPanel.Dock="Right"
+                                    Watermark="Vælg din konto..."
+                                    Style="{StaticResource InputBoxPayments}"/>
+        </DockPanel>
 
-        <DockPanel Grid.Row="3" Grid.Column="0" LastChildFill="False" Margin="15 15 30 15">
-            <Label Content="Note:"
-                       DockPanel.Dock="Left"
-                       FontSize="15"
-                       HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                       Style="{StaticResource BaseFontFamily}"/>
-            <xctk:WatermarkTextBox x:Name="Note" 
-                     DockPanel.Dock="Right"
-                     Width="200"
-                     FontSize="12"
-                     Watermark="Tekst til beløbsmodtager..."
-                     Style="{StaticResource InputBoxPayments}"/>
+        <DockPanel Grid.Row="3" LastChildFill="False" Margin="15 15 30 15">
+            <Label Content="Beløb:"
+                   DockPanel.Dock="Left"
+                   FontSize="15"
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                   Style="{StaticResource BaseFontFamily}"/>
+            <xctk:WatermarkTextBox x:Name="Amount"
+                                   Text="{Binding Amount, Mode=OneWayToSource, Converter={StaticResource StringToDecimal}}"
+                                   DockPanel.Dock="Right"
+                                   Watermark="Indtast beløb i kroner.."
+                                   Style="{StaticResource InputBoxPayments}"/>
         </DockPanel>
 
         <DockPanel Grid.Row="4" Grid.Column="0" LastChildFill="False" Margin="15 15 30 15">
+            <Label Content="Note:"
+                   DockPanel.Dock="Left"
+                   FontSize="15"
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                   Style="{StaticResource BaseFontFamily}"/>
+            <xctk:WatermarkTextBox x:Name="Note" 
+                                   DockPanel.Dock="Right"
+                                   Watermark="Tekst til beløbsmodtager..."
+                                   Style="{StaticResource InputBoxPayments}"/>
+        </DockPanel>
+
+        <DockPanel Grid.Row="5" Grid.Column="0" LastChildFill="False" Margin="15 15 30 15">
             <Label Content="Modtager:"
-                       DockPanel.Dock="Left"
-                       FontSize="15"
-                       HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                       Style="{StaticResource BaseFontFamily}"/>
+                   DockPanel.Dock="Left"
+                   FontSize="15"
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                   Style="{StaticResource BaseFontFamily}"/>
             <xctk:WatermarkTextBox x:Name="Receiver"
-                     DockPanel.Dock="Right"
-                     Width="200"
-                     FontSize="12"
-                     Watermark="f.eks. 12345678"
-                 Style="{StaticResource InputBoxPayments}"/>
+                                   DockPanel.Dock="Right"
+                                   Watermark="f.eks. 12345678"
+                                   Style="{StaticResource InputBoxPayments}"/>
         </DockPanel>
 
         <!-- Column 1-->
-        <DockPanel Grid.Row="2" Grid.Column="1" LastChildFill="False" Margin="15 15 70 15">
+        <DockPanel Grid.Row="2" Grid.Column="1" LastChildFill="False" Margin="15 15 30 15">
             <Label Content="Saldo:"
-                       DockPanel.Dock="Left"
-                       FontSize="15"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"
-                       Style="{StaticResource BaseFontFamily}"/>
+                   DockPanel.Dock="Left"
+                   FontSize="15"
+                   HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                   Style="{StaticResource BaseFontFamily}"/>
             <Label x:Name="Balance"
+                   Content="{Binding ElementName=Sender, Path=SelectedItem.Balance}"
                    DockPanel.Dock="Right"
-                   BorderBrush="Black"
-                   BorderThickness="0 0 0 2"
-                   Width="200"
-                   Height="40"
                    HorizontalContentAlignment="Right"
-                   VerticalContentAlignment="Center"
-                   FontSize="20"/>
-
+                   Language="da-DK"
+                   ContentStringFormat="{}{0:C}"
+                   Style="{StaticResource InputBoxPayments}"/>
         </DockPanel>
 
-        <Button x:Name="Pay"
+        <Button x:Name="MakePayment"
                 Content="Overfør"
-                Grid.Row="4" Grid.Column="1"
+                Grid.Row="5" Grid.Column="1"
                 FontSize="20"
-                Width="200"
+                Width="150"
                 Height="40"
                 VerticalAlignment="Center"
                 Style="{StaticResource BlueButton}"/>

@@ -8,6 +8,7 @@ namespace DesktopUI.Models
 {
     public class TransactionModel
     {
+        public int TransactionID { get; set; }
         public int AccountNmb { get; set; }
         public string Note { get; set; }
         public char Function { get; set; }
