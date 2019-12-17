@@ -14,13 +14,13 @@ namespace DesktopUI.ViewModels.DashboardPages
 {
     public class AccountsViewModel : Screen
     {
-        private int _accountNmb;
+        private string _accountNmb;
         private string _accountType;
         private string _accountName;
         private decimal _balance;
         private BindableCollection<AccountModel> _accounts = new BindableCollection<AccountModel>();
 
-        public int AccountNmb
+        public string AccountNmb
         {
             get { return _accountNmb; }
             set
@@ -89,7 +89,7 @@ namespace DesktopUI.ViewModels.DashboardPages
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         Accounts.Add(new AccountModel(
-                            AccountNmb = Convert.ToInt32(dr[0]),
+                            AccountNmb = dr[0].ToString(),
                             AccountType = dr[1].ToString(),
                             AccountName = dr[2].ToString(),
                             Balance = Convert.ToDecimal(dr[3])));

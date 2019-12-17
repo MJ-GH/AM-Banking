@@ -52,9 +52,9 @@ namespace DesktopUI.ViewModels
             u = null;
             _manager.ShowWindow(new ShellViewModel(_events, u));
 
-            //DashboardViewModel dash = this;
-            //dash.TryClose();
-            TryClose();
+            DashboardViewModel dash = this;
+            dash.TryClose();
+            //TryClose();
 
             //Application.Current.MainWindow.Close();
             //(GetView() as Window).Close();

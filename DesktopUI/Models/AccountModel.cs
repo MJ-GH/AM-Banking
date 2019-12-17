@@ -8,7 +8,7 @@ namespace DesktopUI.Models
 {
     public class AccountModel
     {
-        public int AccountNmb { get; set; }
+        public string AccountNmb { get; set; }
         public int AccountTypeID { get; set; }
         public string AccountType { get; set; }
         public string AccountName { get; set; }
@@ -19,14 +19,14 @@ namespace DesktopUI.Models
             AccountTypeID = accountTypeID;
         }
 
-        public AccountModel(string accountName, int accountNmb, decimal balance)
+        public AccountModel(string accountName, string accountNmb, decimal balance)
         {
             AccountName = accountName;
             AccountNmb = accountNmb;
             Balance = balance;
         }
 
-        public AccountModel(int accountNmb, string accountType, string accountName, decimal balance)
+        public AccountModel(string accountNmb, string accountType, string accountName, decimal balance)
         {
             AccountNmb = accountNmb;
             AccountType = accountType;

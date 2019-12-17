@@ -59,7 +59,7 @@
                    HorizontalAlignment="Center" VerticalAlignment="Bottom"
                    Style="{StaticResource BaseFontFamily}"/>
             <xctk:WatermarkTextBox x:Name="Amount"
-                                   Text="{Binding Amount, Mode=OneWayToSource, Converter={StaticResource StringToDecimal}}"
+                                   Text="{Binding Amount, Mode=OneWayToSource, Converter={StaticResource StringToDecimal}, UpdateSourceTrigger=PropertyChanged}"
                                    DockPanel.Dock="Right"
                                    Watermark="Indtast beløb i kroner.."
                                    Style="{StaticResource InputBoxPayments}"/>

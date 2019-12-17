@@ -14,17 +14,17 @@ namespace DesktopUI.ViewModels.DashboardPages
 {
     public class PaymentsViewModel : Screen
     {
-        private int _accountNmb;
+        private string _accountNmb;
         private string _accountType;
         private string _accountName;
         private decimal _balance;
         private BindingList<AccountModel> _sender = new BindingList<AccountModel>();
-        private int _selectedAccountNmb;
+        private string _selectedAccountNmb;
         private decimal _amount;
         private string _note;
         private string _receiver;
-
-        public int AccountNmb
+        
+        public string AccountNmb
         {
             get { return _accountNmb; }
             set
@@ -58,6 +58,7 @@ namespace DesktopUI.ViewModels.DashboardPages
             {
                 _balance = value;
                 NotifyOfPropertyChange(() => Balance);
+                NotifyOfPropertyChange(() => CanMakePayment);
             }
         }
         public BindingList<AccountModel> Sender
@@ -67,9 +68,10 @@ namespace DesktopUI.ViewModels.DashboardPages
             {
                 _sender = value;
                 NotifyOfPropertyChange(() => Sender);
+                NotifyOfPropertyChange(() => CanMakePayment);
             }
         }
-        public int SelectedAccountNmb
+        public string SelectedAccountNmb
         {
             get { return _selectedAccountNmb; }
             set
@@ -77,6 +79,7 @@ namespace DesktopUI.ViewModels.DashboardPages
                 _selectedAccountNmb = value;
                 NotifyOfPropertyChange(() => SelectedAccountNmb);
                 NotifyOfPropertyChange(() => CanMakePayment);
+                NotifyOfPropertyChange(() => Balance);
             }
         }
         public decimal Amount
@@ -133,7 +136,7 @@ namespace DesktopUI.ViewModels.DashboardPages
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         Sender.Add(new AccountModel(
-                            AccountNmb = Convert.ToInt32(dr[0]),
+                            AccountNmb = dr[0].ToString(),
                             AccountType = dr[1].ToString(),
                             AccountName = dr[2].ToString(),
                             Balance = Convert.ToDecimal(dr[3])));
@@ -148,10 +151,12 @@ namespace DesktopUI.ViewModels.DashboardPages
             {
                 bool output = false;
 
-                if (SelectedAccountNmb > 0 &&
-                    Amount > 0 &&
+                if (SelectedAccountNmb?.Length > 0 &&
                     Note?.Length > 0 &&
-                    Receiver?.Length > 0)
+                    Receiver?.Length > 0 &&
+                    SelectedAccountNmb != Receiver &&
+                    Amount > 0 &&
+                    Balance >= Amount)
                 {
                     output = true;
                 }
@@ -159,7 +164,6 @@ namespace DesktopUI.ViewModels.DashboardPages
                 return output;
             }
         }
-
 
         public void MakePayment()
         {
