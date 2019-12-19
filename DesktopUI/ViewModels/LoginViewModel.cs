@@ -3,15 +3,9 @@ using DesktopUI.Events;
 using DesktopUI.Models;
 using DesktopUI.ViewModels.MessageBoxes;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Media;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media;
 
 namespace DesktopUI.ViewModels
 {
@@ -98,9 +92,6 @@ namespace DesktopUI.ViewModels
                 }
                 catch (Exception)
                 {
-                    SoundPlayer sp = new SoundPlayer(@"..\\..\\Sounds\\YEET.wav");
-                    sp.Play();
-
                     manager.ShowDialog(new LoginErrorViewModel());
                     Psw = "";
                 }
