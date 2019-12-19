@@ -2,12 +2,11 @@
 using DesktopUI.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace DesktopUI.ViewModels.DashboardPages
@@ -18,12 +17,12 @@ namespace DesktopUI.ViewModels.DashboardPages
         private string _accountType;
         private string _accountName;
         private decimal _balance;
-        private BindingList<AccountModel> _sender = new BindingList<AccountModel>();
+        private ObservableCollection<AccountModel> _sender = new ObservableCollection<AccountModel>();
         private string _selectedAccountNmb;
         private decimal _amount;
         private string _note;
         private string _receiver;
-        
+
         public string AccountNmb
         {
             get { return _accountNmb; }
@@ -61,7 +60,7 @@ namespace DesktopUI.ViewModels.DashboardPages
                 NotifyOfPropertyChange(() => CanMakePayment);
             }
         }
-        public BindingList<AccountModel> Sender
+        public ObservableCollection<AccountModel> Sender
         {
             get { return _sender; }
             set
@@ -77,9 +76,19 @@ namespace DesktopUI.ViewModels.DashboardPages
             set
             {
                 _selectedAccountNmb = value;
+
+                for (int i = 0; i < Sender.Count; i++)
+                {
+                    if (Sender[i].AccountNmb == SelectedAccountNmb)
+                    {
+                        Balance = Sender[i].Balance;
+                    }
+                }
+
                 NotifyOfPropertyChange(() => SelectedAccountNmb);
-                NotifyOfPropertyChange(() => CanMakePayment);
                 NotifyOfPropertyChange(() => Balance);
+                NotifyOfPropertyChange(() => CanMakePayment);
+
             }
         }
         public decimal Amount
@@ -156,7 +165,7 @@ namespace DesktopUI.ViewModels.DashboardPages
                     Receiver?.Length > 0 &&
                     SelectedAccountNmb != Receiver &&
                     Amount > 0 &&
-                    Balance >= Amount)
+                    Amount <= Balance)
                 {
                     output = true;
                 }

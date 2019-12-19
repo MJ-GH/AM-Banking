@@ -43,8 +43,7 @@
                    Style="{StaticResource BaseFontFamily}"/>
             <xctk:WatermarkComboBox x:Name="Sender"
                                     ItemsSource="{Binding Sender}"
-                                    SelectedItem="{Binding SelectedAccountNmb, Mode=OneTime}"
-                                    SelectedValue="{Binding Path=SelectedAccountNmb, Mode=TwoWay}"
+                                    SelectedValue="{Binding Path=SelectedAccountNmb, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                     SelectedValuePath="AccountNmb"
                                     DisplayMemberPath="AccountName"
                                     DockPanel.Dock="Right"
@@ -71,7 +70,8 @@
                    FontSize="15"
                    HorizontalAlignment="Center" VerticalAlignment="Bottom"
                    Style="{StaticResource BaseFontFamily}"/>
-            <xctk:WatermarkTextBox x:Name="Note" 
+            <xctk:WatermarkTextBox x:Name="Note"
+                                   Text="{Binding Note, UpdateSourceTrigger=PropertyChanged}"
                                    DockPanel.Dock="Right"
                                    Watermark="Tekst til beløbsmodtager..."
                                    Style="{StaticResource InputBoxPayments}"/>
@@ -84,6 +84,7 @@
                    HorizontalAlignment="Center" VerticalAlignment="Bottom"
                    Style="{StaticResource BaseFontFamily}"/>
             <xctk:WatermarkTextBox x:Name="Receiver"
+                                   Text="{Binding Receiver, UpdateSourceTrigger=PropertyChanged}"
                                    DockPanel.Dock="Right"
                                    Watermark="f.eks. 12345678"
                                    Style="{StaticResource InputBoxPayments}"/>
@@ -97,7 +98,7 @@
                    HorizontalAlignment="Center" VerticalAlignment="Bottom"
                    Style="{StaticResource BaseFontFamily}"/>
             <Label x:Name="Balance"
-                   Content="{Binding ElementName=Sender, Path=SelectedItem.Balance}"
+                   Content="{Binding ElementName=Sender, Path=SelectedItem.Balance, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                    DockPanel.Dock="Right"
                    HorizontalContentAlignment="Right"
                    Language="da-DK"
