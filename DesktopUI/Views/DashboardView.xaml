@@ -13,7 +13,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="..\Images\history_1_small.jpg" Stretch="Fill"/>
         </Grid.Background>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -25,7 +25,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        
+
         <!-- Column 0 -->
         <Button x:Name="ShowMainMenuPage"
                 Grid.Row="0"

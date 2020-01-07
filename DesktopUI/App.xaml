@@ -10,8 +10,8 @@
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
 
-            
-            
+
+
             <!-- Font -->
             <Style TargetType="Control" x:Key="BaseFontFamily">
                 <Setter Property="FontFamily" Value="Constantia"/>
@@ -23,7 +23,7 @@
             <SolidColorBrush x:Key="Shadow" Color="#A5881D"/>
 
 
-            
+
             <!-- Header Labels -->
             <Style TargetType="Label" x:Key="HeaderLabel" BasedOn="{StaticResource BaseFontFamily}">
                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -45,8 +45,8 @@
                 <Setter Property="Foreground" Value="{StaticResource White}"/>
             </Style>
 
-            
-            
+
+
             <!-- Blå knapper -->
             <Style TargetType="Button" x:Key="BlueButton" BasedOn="{StaticResource BaseFontFamily}">
                 <Setter Property="Width" Value="100"/>
@@ -107,7 +107,7 @@
             </Style>
 
 
-            
+
             <!-- Inputbox på LoginView & SignUpView -->
             <Style TargetType="Control" x:Key="InputBox" BasedOn="{StaticResource BaseFontFamily}">
                 <Setter Property="VerticalAlignment" Value="Center"/>
@@ -128,7 +128,7 @@
                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
             </Style>
 
-            
+
 
             <!-- ContentControl på DashboardView -->
             <Style TargetType="ContentControl" x:Key="DashboardCCStyle">
@@ -143,8 +143,8 @@
                 </Setter>
             </Style>
 
-            
-            
+
+
             <!-- Alle styles vedrørende Datagrid -->
             <!-- Datagrid -->
             <Style TargetType="DataGrid" x:Key="AlternatingRowBackGroundStyle">
@@ -210,9 +210,6 @@
             <Style TargetType="DataGridCell" x:Key="DataGridCellStyleRight" BasedOn="{StaticResource DataGridCellStyle}">
                 <Setter Property="HorizontalAlignment" Value="Right"/>
             </Style>
-            
-            
-            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

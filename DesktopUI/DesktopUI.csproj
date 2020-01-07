@@ -133,13 +133,10 @@
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
     <Compile Include="Helpers\StringToDecimalConverter.cs" />
     <Compile Include="Models\AccountModel.cs" />
-    <Compile Include="Models\AccountTypeModel.cs" />
     <Compile Include="Models\TransactionModel.cs" />
     <Compile Include="Models\TypesModel.cs" />
     <Compile Include="Models\UserModel.cs" />
-    <Compile Include="Models\UserTypeModel.cs" />
     <Compile Include="ViewModels\DashboardPages\AccountsViewModel.cs" />
-    <Compile Include="ViewModels\DashboardPages\AccountTransactionsViewModel.cs" />
     <Compile Include="ViewModels\DashboardPages\MainMenuViewModel.cs" />
     <Compile Include="ViewModels\DashboardPages\PaymentsViewModel.cs" />
     <Compile Include="ViewModels\DashboardPages\TransactionsViewModel.cs" />
@@ -157,9 +154,6 @@
     <Compile Include="ViewModels\SplashScreenViewModel.cs" />
     <Compile Include="Views\DashboardPages\AccountsView.cs">
       <DependentUpon>AccountsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DashboardPages\AccountTransactionsView.cs">
-      <DependentUpon>AccountTransactionsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DashboardPages\MainMenuView.cs">
       <DependentUpon>MainMenuView.xaml</DependentUpon>
@@ -240,10 +234,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\DashboardPages\AccountsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DashboardPages\AccountTransactionsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

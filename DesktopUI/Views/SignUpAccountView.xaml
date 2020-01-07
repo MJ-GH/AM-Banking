@@ -60,14 +60,14 @@
         <StackPanel Grid.Row="2" Grid.Column="1"
                     Orientation="Vertical"
                     VerticalAlignment="Center">
-            
+
             <Grid>
                 <Viewbox Width="20" Height="20" Margin="0 5 185 0">
                     <Grid Width="20" Height="20">
                         <TextBlock Text="?"
                                    TextAlignment="Center"
                                    HorizontalAlignment="Center"  VerticalAlignment="Center"/>
-                        
+
                         <Ellipse Stroke="Black"
                                  Cursor="Help"
                                  Fill="Transparent"

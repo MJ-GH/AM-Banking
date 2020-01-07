@@ -7,6 +7,7 @@
         Title="Error" Height="135" Width="300" 
         WindowStartupLocation="CenterScreen" WindowStyle="None" 
         AllowsTransparency="True">
+
     <Grid>
         <!-- Baggrund -->
         <Grid.Background>
@@ -19,7 +20,7 @@
             <ColumnDefinition Width="40"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        
+
         <!-- Tekst -->
         <TextBlock Grid.Column="1"
                    Text="Telefonnummer skal være præcist 8 cifre langt!"
