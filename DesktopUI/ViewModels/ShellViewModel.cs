@@ -25,12 +25,12 @@ namespace DesktopUI.ViewModels
 
             ActivateItem(IoC.Get<SplashScreenViewModel>());
 
-            dt.Tick += new EventHandler(Dt_Tick);
+            dt.Tick += new EventHandler(DtOver);
             dt.Interval = new TimeSpan(0, 0, 2);
             dt.Start();
         }
 
-        private void Dt_Tick(object sender, EventArgs e)
+        private void DtOver(object sender, EventArgs e)
         {
             dt.Stop();
 
