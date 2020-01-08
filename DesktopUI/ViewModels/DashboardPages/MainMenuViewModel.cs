@@ -10,7 +10,7 @@ namespace DesktopUI.ViewModels.DashboardPages
         private string _firstName;
         private string _lastName;
         private IEventAggregator _events;
-        private int _timeOftheDay;
+        private int _timeOfDay;
 
         public string FirstName
         {
@@ -36,23 +36,23 @@ namespace DesktopUI.ViewModels.DashboardPages
         {
             get
             {
-                if(_timeOftheDay >= 6 && _timeOftheDay < 9) // 06:00 - 08:59
+                if(_timeOfDay >= 6 && _timeOfDay < 9) // 06:00 - 08:59
                 {
                     msg = $"Godmorgen { FirstName }";
                 }
-                else if (_timeOftheDay >= 9 && _timeOftheDay < 12) // 09:00 - 11:59
+                else if (_timeOfDay >= 9 && _timeOfDay < 12) // 09:00 - 11:59
                 {
                     msg = $"God formiddag { FirstName }";
                 }
-                else if (_timeOftheDay >= 12 && _timeOftheDay < 18) // 12:00 - 17:59
+                else if (_timeOfDay >= 12 && _timeOfDay < 18) // 12:00 - 17:59
                 {
                     msg = $"God eftermiddag { FirstName }";
                 }
-                else if (_timeOftheDay >= 18 && _timeOftheDay < 24) // 18:00 - 23:59
+                else if (_timeOfDay >= 18 && _timeOfDay < 24) // 18:00 - 23:59
                 {
                     msg = $"Godaften { FirstName }";
                 }
-                else if (_timeOftheDay >= 0 && _timeOftheDay < 6) // 00:00 - 05:59
+                else if (_timeOfDay >= 0 && _timeOfDay < 6) // 00:00 - 05:59
                 {
                     msg = $"Natuglen, { FirstName }";
                 }
@@ -65,7 +65,7 @@ namespace DesktopUI.ViewModels.DashboardPages
         {
             _firstName = DashboardViewModel.u.FirstName;
             _lastName = DashboardViewModel.u.LastName;
-            _timeOftheDay = DateTime.Now.Hour;
+            _timeOfDay = DateTime.Now.Hour;
             _events = events;
         }
 
