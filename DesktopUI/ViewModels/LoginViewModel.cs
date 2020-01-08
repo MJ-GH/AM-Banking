@@ -5,7 +5,6 @@ using DesktopUI.ViewModels.MessageBoxes;
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Media;
 
 namespace DesktopUI.ViewModels
 {
@@ -39,7 +38,7 @@ namespace DesktopUI.ViewModels
             _events = events;
         }
 
-        public void ShowSignUp()
+        public void ShowSignUpPage()
         {
             _events.PublishOnUIThread(new SignUpUserPageRequest());
         }

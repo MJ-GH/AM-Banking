@@ -60,7 +60,7 @@
                 VerticalAlignment="Top"
                 Style="{StaticResource BlueButton}"/>
 
-        <Button x:Name="ShowSignUp"
+        <Button x:Name="ShowSignUpPage"
                 Content="Opret Nu!"
                 Grid.Row="3" Grid.Column="1"
                 VerticalAlignment="Top"
